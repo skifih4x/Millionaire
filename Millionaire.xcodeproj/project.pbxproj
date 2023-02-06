@@ -15,6 +15,13 @@
 		0059CEF4298FBC82004D2534 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0059CEF2298FBC82004D2534 /* LaunchScreen.storyboard */; };
 		66932F58298FEFD200FF3125 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66932F57298FEFD200FF3125 /* Questions.swift */; };
 		66932F5A298FEFF000FF3125 /* QuestionsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66932F59298FEFF000FF3125 /* QuestionsBuilder.swift */; };
+
+		E549E345298FF06F002F16EB /* AnswerAccepted.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E549E340298FF06F002F16EB /* AnswerAccepted.mp3 */; };
+		E549E346298FF06F002F16EB /* Millionaire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E549E341298FF06F002F16EB /* Millionaire.mp3 */; };
+		E549E347298FF06F002F16EB /* CorrectAnswer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E549E342298FF06F002F16EB /* CorrectAnswer.mp3 */; };
+		E549E348298FF06F002F16EB /* TimerSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E549E343298FF06F002F16EB /* TimerSound.mp3 */; };
+		E549E349298FF06F002F16EB /* WrongAnswer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E549E344298FF06F002F16EB /* WrongAnswer.mp3 */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +35,13 @@
 		0059CEF5298FBC82004D2534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66932F57298FEFD200FF3125 /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		66932F59298FEFF000FF3125 /* QuestionsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsBuilder.swift; sourceTree = "<group>"; };
+
+		E549E340298FF06F002F16EB /* AnswerAccepted.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AnswerAccepted.mp3; sourceTree = "<group>"; };
+		E549E341298FF06F002F16EB /* Millionaire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Millionaire.mp3; sourceTree = "<group>"; };
+		E549E342298FF06F002F16EB /* CorrectAnswer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CorrectAnswer.mp3; sourceTree = "<group>"; };
+		E549E343298FF06F002F16EB /* TimerSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TimerSound.mp3; sourceTree = "<group>"; };
+		E549E344298FF06F002F16EB /* WrongAnswer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WrongAnswer.mp3; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,10 +82,12 @@
 				0059CEF0298FBC82004D2534 /* Assets.xcassets */,
 				0059CEF2298FBC82004D2534 /* LaunchScreen.storyboard */,
 				0059CEF5298FBC82004D2534 /* Info.plist */,
+				E549E33F298FF06F002F16EB /* Sounds */,
 			);
 			path = Millionaire;
 			sourceTree = "<group>";
 		};
+
 		66932F5B298FF00300FF3125 /* Questions */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +95,18 @@
 				66932F57298FEFD200FF3125 /* Questions.swift */,
 			);
 			name = Questions;
+
+		E549E33F298FF06F002F16EB /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				E549E340298FF06F002F16EB /* AnswerAccepted.mp3 */,
+				E549E341298FF06F002F16EB /* Millionaire.mp3 */,
+				E549E342298FF06F002F16EB /* CorrectAnswer.mp3 */,
+				E549E343298FF06F002F16EB /* TimerSound.mp3 */,
+				E549E344298FF06F002F16EB /* WrongAnswer.mp3 */,
+			);
+			path = Sounds;
+
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +168,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0059CEF4298FBC82004D2534 /* LaunchScreen.storyboard in Resources */,
+				E549E345298FF06F002F16EB /* AnswerAccepted.mp3 in Resources */,
+				E549E349298FF06F002F16EB /* WrongAnswer.mp3 in Resources */,
+				E549E346298FF06F002F16EB /* Millionaire.mp3 in Resources */,
+				E549E347298FF06F002F16EB /* CorrectAnswer.mp3 in Resources */,
 				0059CEF1298FBC82004D2534 /* Assets.xcassets in Resources */,
+				E549E348298FF06F002F16EB /* TimerSound.mp3 in Resources */,
 				0059CEEF298FBC81004D2534 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -19,8 +19,14 @@ class QuestionViewController: UIViewController {
     
     let allQuestions = AllQuestions()
     var indexOfQuestions = 0
+    var rightAnswer: Bool?
     
     @IBAction func answerBtnPressed(_ sender: UIButton) {
+        if sender.tag == allQuestions.questions[indexOfQuestions].rightAnswer {
+            rightAnswer = true
+        } else {
+            rightAnswer = false
+        }
     }
     
     override func viewDidLoad() {
@@ -28,6 +34,18 @@ class QuestionViewController: UIViewController {
 
     getQuestion(index: indexOfQuestions)
         
+    }
+   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC: LevelPlayerViewController = segue.destination as! LevelPlayerViewController
+        
+        if rightAnswer == true {
+            destinationVC.rightAnswer = true
+        } else {
+            destinationVC.rightAnswer = false
+        }
+        
+        destinationVC.indexOfQuestions = indexOfQuestions
     }
     
     func getQuestion(index: Int) {
@@ -40,6 +58,4 @@ class QuestionViewController: UIViewController {
         answerThree.setTitle(allQuestions.questions[index].answer3, for: .normal)
         answerFour.setTitle(allQuestions.questions[index].answer4, for: .normal)
     }
-    
-
 }

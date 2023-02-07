@@ -162,7 +162,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="Group 29-1" imagePadding="0.0"/>
                                         <connections>
-                                            <segue destination="e2f-cw-cA3" kind="show" id="keG-jN-DXH"/>
+                                            <segue destination="e2f-cw-cA3" kind="show" identifier="LevelPlayerVC" id="keG-jN-DXH"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7J-7u-1b3">

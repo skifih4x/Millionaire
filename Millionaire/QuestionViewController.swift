@@ -17,6 +17,8 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var answerThree: UIButton!
     @IBOutlet weak var answerFour: UIButton!
     
+    let allQuestions = AllQuestions()
+    var indexOfQuestions = 0
     
     @IBAction func answerBtnPressed(_ sender: UIButton) {
     }
@@ -24,18 +26,20 @@ class QuestionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    getQuestion(index: indexOfQuestions)
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func getQuestion(index: Int) {
+        questionLbl.text = allQuestions.questions[index].question
+        questionLbl.numberOfLines = 0
+        
+        answerOne.setTitle(allQuestions.questions[index].answer1, for: .normal)
+//        answerOne.titleLabel?.textAlignment = .right
+        answerTwo.setTitle(allQuestions.questions[index].answer2, for: .normal)
+        answerThree.setTitle(allQuestions.questions[index].answer3, for: .normal)
+        answerFour.setTitle(allQuestions.questions[index].answer4, for: .normal)
     }
-    */
+    
 
 }

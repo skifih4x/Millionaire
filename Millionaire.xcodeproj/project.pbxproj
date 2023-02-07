@@ -15,15 +15,18 @@
 		0059CEEF298FBC81004D2534 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0059CEED298FBC81004D2534 /* Main.storyboard */; };
 		0059CEF1298FBC82004D2534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0059CEF0298FBC82004D2534 /* Assets.xcassets */; };
 		0059CEF4298FBC82004D2534 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0059CEF2298FBC82004D2534 /* LaunchScreen.storyboard */; };
+		8464E5D7298FF256003021C9 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464E5D6298FF256003021C9 /* QuestionViewController.swift */; };
+		8464E5D929903BB5003021C9 /* LoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464E5D829903BB5003021C9 /* LoseViewController.swift */; };
+		8464E5DB29904219003021C9 /* LevelPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464E5DA29904219003021C9 /* LevelPlayerViewController.swift */; };
+		8F934BC92992A74100D351B3 /* zvukchasov.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F934BC82992A74100D351B3 /* zvukchasov.mp3 */; };
+		8F934BCB2992AB2100D351B3 /* otvetprinyat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F934BCA2992AB2100D351B3 /* otvetprinyat.mp3 */; };
+		8F934BCD2992B3B800D351B3 /* vernyiotvet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F934BCC2992B3B800D351B3 /* vernyiotvet.mp3 */; };
+		8F934BCF2992B3C700D351B3 /* nevernyiotvet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F934BCE2992B3C700D351B3 /* nevernyiotvet.mp3 */; };
 		E549E345298FF06F002F16EB /* AnswerAccepted.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E549E340298FF06F002F16EB /* AnswerAccepted.mp3 */; };
 		E549E346298FF06F002F16EB /* Millionaire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E549E341298FF06F002F16EB /* Millionaire.mp3 */; };
 		E549E347298FF06F002F16EB /* CorrectAnswer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E549E342298FF06F002F16EB /* CorrectAnswer.mp3 */; };
 		E549E348298FF06F002F16EB /* TimerSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E549E343298FF06F002F16EB /* TimerSound.mp3 */; };
 		E549E349298FF06F002F16EB /* WrongAnswer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E549E344298FF06F002F16EB /* WrongAnswer.mp3 */; };
-		8464E5D7298FF256003021C9 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464E5D6298FF256003021C9 /* QuestionViewController.swift */; };
-		8464E5D929903BB5003021C9 /* LoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464E5D829903BB5003021C9 /* LoseViewController.swift */; };
-		8464E5DB29904219003021C9 /* LevelPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464E5DA29904219003021C9 /* LevelPlayerViewController.swift */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,15 +40,19 @@
 		0059CEF0298FBC82004D2534 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0059CEF3298FBC82004D2534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0059CEF5298FBC82004D2534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8464E5CF298FF1AD003021C9 /* Millionaire-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Millionaire-Bridging-Header.h"; sourceTree = "<group>"; };
+		8464E5D6298FF256003021C9 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		8464E5D829903BB5003021C9 /* LoseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoseViewController.swift; sourceTree = "<group>"; };
+		8464E5DA29904219003021C9 /* LevelPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelPlayerViewController.swift; sourceTree = "<group>"; };
+		8F934BC82992A74100D351B3 /* zvukchasov.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = zvukchasov.mp3; sourceTree = "<group>"; };
+		8F934BCA2992AB2100D351B3 /* otvetprinyat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = otvetprinyat.mp3; sourceTree = "<group>"; };
+		8F934BCC2992B3B800D351B3 /* vernyiotvet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = vernyiotvet.mp3; sourceTree = "<group>"; };
+		8F934BCE2992B3C700D351B3 /* nevernyiotvet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nevernyiotvet.mp3; sourceTree = "<group>"; };
 		E549E340298FF06F002F16EB /* AnswerAccepted.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AnswerAccepted.mp3; sourceTree = "<group>"; };
 		E549E341298FF06F002F16EB /* Millionaire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Millionaire.mp3; sourceTree = "<group>"; };
 		E549E342298FF06F002F16EB /* CorrectAnswer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CorrectAnswer.mp3; sourceTree = "<group>"; };
 		E549E343298FF06F002F16EB /* TimerSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TimerSound.mp3; sourceTree = "<group>"; };
 		E549E344298FF06F002F16EB /* WrongAnswer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WrongAnswer.mp3; sourceTree = "<group>"; };
-		8464E5CF298FF1AD003021C9 /* Millionaire-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Millionaire-Bridging-Header.h"; sourceTree = "<group>"; };
-		8464E5D6298FF256003021C9 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
-		8464E5D829903BB5003021C9 /* LoseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoseViewController.swift; sourceTree = "<group>"; };
-		8464E5DA29904219003021C9 /* LevelPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelPlayerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +99,10 @@
 				0059CEF5298FBC82004D2534 /* Info.plist */,
 				E549E33F298FF06F002F16EB /* Sounds */,
 				8464E5CF298FF1AD003021C9 /* Millionaire-Bridging-Header.h */,
+				8F934BC82992A74100D351B3 /* zvukchasov.mp3 */,
+				8F934BCA2992AB2100D351B3 /* otvetprinyat.mp3 */,
+				8F934BCC2992B3B800D351B3 /* vernyiotvet.mp3 */,
+				8F934BCE2992B3C700D351B3 /* nevernyiotvet.mp3 */,
 			);
 			path = Millionaire;
 			sourceTree = "<group>";
@@ -168,11 +179,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				0059CEF4298FBC82004D2534 /* LaunchScreen.storyboard in Resources */,
+				8F934BC92992A74100D351B3 /* zvukchasov.mp3 in Resources */,
+				8F934BCF2992B3C700D351B3 /* nevernyiotvet.mp3 in Resources */,
 				E549E345298FF06F002F16EB /* AnswerAccepted.mp3 in Resources */,
 				E549E349298FF06F002F16EB /* WrongAnswer.mp3 in Resources */,
 				E549E346298FF06F002F16EB /* Millionaire.mp3 in Resources */,
+				8F934BCD2992B3B800D351B3 /* vernyiotvet.mp3 in Resources */,
 				E549E347298FF06F002F16EB /* CorrectAnswer.mp3 in Resources */,
 				0059CEF1298FBC82004D2534 /* Assets.xcassets in Resources */,
+				8F934BCB2992AB2100D351B3 /* otvetprinyat.mp3 in Resources */,
 				E549E348298FF06F002F16EB /* TimerSound.mp3 in Resources */,
 				0059CEEF298FBC81004D2534 /* Main.storyboard in Resources */,
 			);
@@ -185,7 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0059CEEC298FBC81004D2534 /* ViewController.swift in Sources */,
+				0059CEEC298FBC81004D2534 /* StartViewController.swift in Sources */,
 				003C0F6A299144C6002EFC41 /* Questions.swift in Sources */,
 				003C0F6C299144CB002EFC41 /* QuestionsBuilder.swift in Sources */,
 				0059CEEC298FBC81004D2534 /* StartViewController.swift in Sources */,

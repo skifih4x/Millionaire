@@ -6,9 +6,14 @@
 //
 
 import UIKit
+import Foundation
+import AVFoundation
 
 class QuestionViewController: UIViewController {
     
+    var player: AVAudioPlayer!
+    var audioPlayerTimer = Timer()
+
     
     @IBOutlet weak var questionLbl: UILabel!
     
@@ -24,15 +29,19 @@ class QuestionViewController: UIViewController {
     @IBAction func answerBtnPressed(_ sender: UIButton) {
         if sender.tag == allQuestions.questions[indexOfQuestions].rightAnswer {
             rightAnswer = true
+            print("right")
         } else {
             rightAnswer = false
+            print("no")
         }
+        playSound(name: "otvetprinyat")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    getQuestion(index: indexOfQuestions)
+        getQuestion(index: indexOfQuestions)
+        playSound(name: "zvukchasov")
         
     }
    
@@ -57,5 +66,30 @@ class QuestionViewController: UIViewController {
         answerTwo.setTitle(allQuestions.questions[index].answer2, for: .normal)
         answerThree.setTitle(allQuestions.questions[index].answer3, for: .normal)
         answerFour.setTitle(allQuestions.questions[index].answer4, for: .normal)
+    }
+    
+    func playSound(name: String) {
+        if name == "otvetprinyat" {
+            
+            let url = Bundle.main.url(forResource: name, withExtension: "mp3")
+            player = try! AVAudioPlayer(contentsOf: url!)
+            player.play()
+            audioPlayerTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.stopAfter5), userInfo: nil, repeats: false)
+            
+        } else {
+           
+            let url = Bundle.main.url(forResource: name, withExtension: "mp3")
+            player = try! AVAudioPlayer(contentsOf: url!)
+            player.play()
+        }
+    }
+    
+    @objc func stopAfter5() {
+        player.stop()
+        if rightAnswer == true {
+            playSound(name: "vernyiotvet")
+        } else {
+            playSound(name: "nevernyiotvet")
+        }
     }
 }

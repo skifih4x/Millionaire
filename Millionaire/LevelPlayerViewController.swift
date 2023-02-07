@@ -9,7 +9,9 @@ import UIKit
 
 class LevelPlayerViewController: UIViewController {
     
-
+    var indexOfQuestions = 0
+    var rightAnswer: Bool?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

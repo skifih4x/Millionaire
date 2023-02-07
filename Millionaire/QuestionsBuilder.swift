@@ -8,10 +8,7 @@
 import Foundation
 struct Question {
     let question: String
-    let answer1: String
-    let answer2: String
-    let answer3: String
-    let answer4: String
+    var answers: [String]
     let rightAnswer: Int
     let cash: Int
 }

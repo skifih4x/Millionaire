@@ -60,7 +60,6 @@ class QuestionViewController: UIViewController {
         questionLbl.numberOfLines = 0
         
         answerOne.setTitle(allQuestions.questions[index].answer1, for: .normal)
-//        answerOne.titleLabel?.textAlignment = .right
         answerTwo.setTitle(allQuestions.questions[index].answer2, for: .normal)
         answerThree.setTitle(allQuestions.questions[index].answer3, for: .normal)
         answerFour.setTitle(allQuestions.questions[index].answer4, for: .normal)
@@ -71,7 +70,7 @@ class QuestionViewController: UIViewController {
             let url = Bundle.main.url(forResource: name, withExtension: "mp3")
             player = try! AVAudioPlayer(contentsOf: url!)
             player.play()
-            audioPlayerTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.stopSound), userInfo: nil, repeats: false)
+            audioPlayerTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.stopMusic), userInfo: nil, repeats: false)
         } else {
             let url = Bundle.main.url(forResource: name, withExtension: "mp3")
             player = try! AVAudioPlayer(contentsOf: url!)
@@ -79,7 +78,7 @@ class QuestionViewController: UIViewController {
         }
     }
     
-    @objc func stopSound() {
+    @objc func stopMusic() {
         player.stop()
         if rightAnswer == true {
             playSound(name: "vernyiotvet")

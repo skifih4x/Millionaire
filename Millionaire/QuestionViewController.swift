@@ -8,7 +8,19 @@
 import UIKit
 
 class QuestionViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var questionLbl: UILabel!
+    
+    @IBOutlet weak var answerOne: UIButton!
+    @IBOutlet weak var answerTwo: UIButton!
+    @IBOutlet weak var answerThree: UIButton!
+    @IBOutlet weak var answerFour: UIButton!
+    
+    
+    @IBAction func answerBtnPressed(_ sender: UIButton) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -8,22 +8,38 @@
 import UIKit
 
 class QuestionViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var questionLbl: UILabel!
+    
+    @IBOutlet weak var answerOne: UILabel!
+    @IBOutlet weak var answerTwo: UILabel!
+    @IBOutlet weak var answerThree: UILabel!
+    @IBOutlet weak var answerFour: UILabel!
+    
+    
+    @IBAction func answerBtnPresesd(_ sender: UIButton) {
+        
+    }
+    
+    let allQuestions = AllQuestions()
+    var indexOfQuestions = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        getQuestion(index: indexOfQuestions)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func getQuestion(index: Int) {
+        
+        questionLbl.text = allQuestions.questions[index].question
+        questionLbl.numberOfLines = 0
+        
+        answerOne.text = allQuestions.questions[index].answers[0]
+        answerTwo.text = allQuestions.questions[index].answers[1]
+        answerThree.text = allQuestions.questions[index].answers[2]
+        answerFour.text = allQuestions.questions[index].answers[3]
     }
-    */
 
 }

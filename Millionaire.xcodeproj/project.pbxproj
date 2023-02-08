@@ -20,6 +20,7 @@
 		8464E5D929903BB5003021C9 /* LoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464E5D829903BB5003021C9 /* LoseViewController.swift */; };
 		8464E5DB29904219003021C9 /* LevelPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464E5DA29904219003021C9 /* LevelPlayerViewController.swift */; };
 		8464E5DD2992FFA6003021C9 /* RulesGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464E5DC2992FFA6003021C9 /* RulesGameViewController.swift */; };
+		AB6DF3C52993E75C00C69E4A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DF3C42993E75C00C69E4A /* Constants.swift */; };
 		E549E345298FF06F002F16EB /* AnswerAccepted.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E549E340298FF06F002F16EB /* AnswerAccepted.mp3 */; };
 		E549E346298FF06F002F16EB /* Millionaire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E549E341298FF06F002F16EB /* Millionaire.mp3 */; };
 		E549E347298FF06F002F16EB /* CorrectAnswer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E549E342298FF06F002F16EB /* CorrectAnswer.mp3 */; };
@@ -44,6 +45,7 @@
 		8464E5D829903BB5003021C9 /* LoseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoseViewController.swift; sourceTree = "<group>"; };
 		8464E5DA29904219003021C9 /* LevelPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelPlayerViewController.swift; sourceTree = "<group>"; };
 		8464E5DC2992FFA6003021C9 /* RulesGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesGameViewController.swift; sourceTree = "<group>"; };
+		AB6DF3C42993E75C00C69E4A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E549E340298FF06F002F16EB /* AnswerAccepted.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AnswerAccepted.mp3; sourceTree = "<group>"; };
 		E549E341298FF06F002F16EB /* Millionaire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Millionaire.mp3; sourceTree = "<group>"; };
 		E549E342298FF06F002F16EB /* CorrectAnswer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CorrectAnswer.mp3; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				E549E33F298FF06F002F16EB /* Sounds */,
 				8464E5CF298FF1AD003021C9 /* Millionaire-Bridging-Header.h */,
 				008F16FF2993E20600466BC0 /* ScoreViewController.swift */,
+				AB6DF3C42993E75C00C69E4A /* Constants.swift */,
 			);
 			path = Millionaire;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				0059CEEC298FBC81004D2534 /* StartViewController.swift in Sources */,
 				008F17002993E20600466BC0 /* ScoreViewController.swift in Sources */,
 				003C0F6A299144C6002EFC41 /* Questions.swift in Sources */,
+				AB6DF3C52993E75C00C69E4A /* Constants.swift in Sources */,
 				003C0F6C299144CB002EFC41 /* QuestionsBuilder.swift in Sources */,
 				8464E5DD2992FFA6003021C9 /* RulesGameViewController.swift in Sources */,
 				0059CEEC298FBC81004D2534 /* StartViewController.swift in Sources */,

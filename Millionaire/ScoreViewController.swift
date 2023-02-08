@@ -104,6 +104,14 @@ class ScoreViewController: UIViewController {
             }
         }
     }
+
+    private func presentDefaultError(title: String, text: String) {
+        let alertController = UIAlertController(title: title, message: text, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default))
+
+        present(alertController, animated: true)
+
+    }
     
     private func createView() {
         setBackground(in: view, with: "background")
@@ -154,15 +162,15 @@ class ScoreViewController: UIViewController {
         switch questionNumber {
             
         case 5: viewForQuestion.backgroundColor = .systemBlue
-            setBackground(in: viewForQuestion, with: "RectangleBlue")
+            setBackground(in: viewForQuestion, with: RectangleImages.blue.rawValue)
         case 10: viewForQuestion.backgroundColor = .systemBlue
-            setBackground(in: viewForQuestion, with: "RectangleBlue")
+            setBackground(in: viewForQuestion, with: RectangleImages.blue.rawValue)
         case 15:
-            setBackground(in: viewForQuestion, with: "RectangleYellow")
+            setBackground(in: viewForQuestion, with: RectangleImages.yellow.rawValue)
             viewForQuestion.backgroundColor = .systemYellow
         default:
             viewForQuestion.backgroundColor = .systemPurple
-            setBackground(in: viewForQuestion, with: "RectanglePurple")
+            setBackground(in: viewForQuestion, with: RectangleImages.purple.rawValue)
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
@@ -193,36 +201,14 @@ class ScoreViewController: UIViewController {
     
     private var animationCounter = 0
     
-    //    private func flashingAnimation(in view: UIView) {
-    //        let backGroundImageView = view.subviews.compactMap ({ view in
-    //            return view as? UIImageView
-    //        })[0]
-    //
-    //        let currentImageBackground = backGroundImageView.image
-    //        let flashingBackgroundView: UIImage = self.isCorrect ? UIImage(named: "RectangleGreen")! : UIImage(named: "RectangleRed")!
-    //
-    //
-    //
-    //        UIView.animate(withDuration: 0.75, delay: 0.2, options: [.autoreverse, .repeat], animations: {
-    //            backGroundImageView.image = flashingBackgroundView
-    //        }) { [weak self] _ in
-    //            guard let self else { return }
-    //            self.animationCounter += 1
-    //            if self.animationCounter < 2 {
-    //                self.flashingAnimation(in: view)
-    //            } else {
-    //                //  view.backgroundColor = color
-    //            }
-    //        }
-    //    }
-    
     private func flashingAnimation(in view: UIView) {
         let backGroundImageView = view.subviews.compactMap ({ view in
             return view as? UIImageView
         })[0]
         
-        let currentImageBackground = backGroundImageView.image
-        let flashingBackgroundView: UIImage = self.isCorrect ? UIImage(named: "RectangleGreen")! : UIImage(named: "RectangleRed")!
+    //  let currentImageBackground = backGroundImageView.image
+        let flashingBackgroundView: UIImage = self.isCorrect ? UIImage(named: RectangleImages.green.rawValue)! : UIImage(named: RectangleImages.red
+            .rawValue)!
         
         
         UIView.transition(with: backGroundImageView,

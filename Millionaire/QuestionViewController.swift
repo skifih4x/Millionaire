@@ -9,6 +9,9 @@ import UIKit
 
 class QuestionViewController: UIViewController {
     
+    let allQuestions = AllQuestions()
+    var currentQuestion = 0
+    var isCorrect: Bool?
     
     @IBOutlet weak var questionLbl: UILabel!
     
@@ -20,16 +23,29 @@ class QuestionViewController: UIViewController {
   
     
     @IBAction func answerBtnPresesd(_ sender: UIButton) {
-        
+        if sender.tag == allQuestions.questions[currentQuestion].rightAnswer {
+            isCorrect = true
+        } else {
+            isCorrect = false
+        }
     }
-    
-    let allQuestions = AllQuestions()
-    var indexOfQuestions = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        getQuestion(index: indexOfQuestions)
+        getQuestion(index: currentQuestion)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC: ScoreViewController = segue.destination as! ScoreViewController
+        
+        if isCorrect == true {
+            destinationVC.isCorrect = true
+        } else {
+            destinationVC.isCorrect = false
+        }
+        
+        destinationVC.currentQuestion = currentQuestion
     }
     
     func getQuestion(index: Int) {

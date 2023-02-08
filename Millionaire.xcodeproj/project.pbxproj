@@ -26,6 +26,8 @@
 		E549E347298FF06F002F16EB /* CorrectAnswer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E549E342298FF06F002F16EB /* CorrectAnswer.mp3 */; };
 		E549E348298FF06F002F16EB /* TimerSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E549E343298FF06F002F16EB /* TimerSound.mp3 */; };
 		E549E349298FF06F002F16EB /* WrongAnswer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E549E344298FF06F002F16EB /* WrongAnswer.mp3 */; };
+		E5EBBD10299414DE00F509CC /* Hints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBBD0F299414DE00F509CC /* Hints.swift */; };
+		E5EBBD1229941C2B00F509CC /* FiftyFifty.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E5EBBD1129941C2B00F509CC /* FiftyFifty.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		E549E342298FF06F002F16EB /* CorrectAnswer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CorrectAnswer.mp3; sourceTree = "<group>"; };
 		E549E343298FF06F002F16EB /* TimerSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TimerSound.mp3; sourceTree = "<group>"; };
 		E549E344298FF06F002F16EB /* WrongAnswer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WrongAnswer.mp3; sourceTree = "<group>"; };
+		E5EBBD0F299414DE00F509CC /* Hints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hints.swift; sourceTree = "<group>"; };
+		E5EBBD1129941C2B00F509CC /* FiftyFifty.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FiftyFifty.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 				8464E5CF298FF1AD003021C9 /* Millionaire-Bridging-Header.h */,
 				008F16FF2993E20600466BC0 /* ScoreViewController.swift */,
 				AB6DF3C42993E75C00C69E4A /* Constants.swift */,
+				E5EBBD0F299414DE00F509CC /* Hints.swift */,
 			);
 			path = Millionaire;
 			sourceTree = "<group>";
@@ -107,6 +112,7 @@
 		E549E33F298FF06F002F16EB /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				E5EBBD1129941C2B00F509CC /* FiftyFifty.mp3 */,
 				E549E340298FF06F002F16EB /* AnswerAccepted.mp3 */,
 				E549E341298FF06F002F16EB /* Millionaire.mp3 */,
 				E549E342298FF06F002F16EB /* CorrectAnswer.mp3 */,
@@ -178,6 +184,7 @@
 				0059CEF4298FBC82004D2534 /* LaunchScreen.storyboard in Resources */,
 				E549E345298FF06F002F16EB /* AnswerAccepted.mp3 in Resources */,
 				E549E349298FF06F002F16EB /* WrongAnswer.mp3 in Resources */,
+				E5EBBD1229941C2B00F509CC /* FiftyFifty.mp3 in Resources */,
 				E549E346298FF06F002F16EB /* Millionaire.mp3 in Resources */,
 				E549E347298FF06F002F16EB /* CorrectAnswer.mp3 in Resources */,
 				0059CEF1298FBC82004D2534 /* Assets.xcassets in Resources */,
@@ -193,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5EBBD10299414DE00F509CC /* Hints.swift in Sources */,
 				0059CEEC298FBC81004D2534 /* StartViewController.swift in Sources */,
 				008F17002993E20600466BC0 /* ScoreViewController.swift in Sources */,
 				003C0F6A299144C6002EFC41 /* Questions.swift in Sources */,

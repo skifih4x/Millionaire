@@ -17,6 +17,7 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var answerThree: UILabel!
     @IBOutlet weak var answerFour: UILabel!
     
+  
     
     @IBAction func answerBtnPresesd(_ sender: UIButton) {
         

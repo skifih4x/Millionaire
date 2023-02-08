@@ -162,15 +162,15 @@ class ScoreViewController: UIViewController {
         switch questionNumber {
             
         case 5: viewForQuestion.backgroundColor = .systemBlue
-            setBackground(in: viewForQuestion, with: "RectangleBlue")
+            setBackground(in: viewForQuestion, with: RectangleImages.blue.rawValue)
         case 10: viewForQuestion.backgroundColor = .systemBlue
-            setBackground(in: viewForQuestion, with: "RectangleBlue")
+            setBackground(in: viewForQuestion, with: RectangleImages.blue.rawValue)
         case 15:
-            setBackground(in: viewForQuestion, with: "RectangleYellow")
+            setBackground(in: viewForQuestion, with: RectangleImages.yellow.rawValue)
             viewForQuestion.backgroundColor = .systemYellow
         default:
             viewForQuestion.backgroundColor = .systemPurple
-            setBackground(in: viewForQuestion, with: "RectanglePurple")
+            setBackground(in: viewForQuestion, with: RectangleImages.purple.rawValue)
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
@@ -206,8 +206,9 @@ class ScoreViewController: UIViewController {
             return view as? UIImageView
         })[0]
         
-        let currentImageBackground = backGroundImageView.image
-        let flashingBackgroundView: UIImage = self.isCorrect ? UIImage(named: "RectangleGreen")! : UIImage(named: "RectangleRed")!
+    //  let currentImageBackground = backGroundImageView.image
+        let flashingBackgroundView: UIImage = self.isCorrect ? UIImage(named: RectangleImages.green.rawValue)! : UIImage(named: RectangleImages.red
+            .rawValue)!
         
         
         UIView.transition(with: backGroundImageView,

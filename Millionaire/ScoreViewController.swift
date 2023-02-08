@@ -236,6 +236,7 @@ class ScoreViewController: UIViewController {
                 self.flashingAnimation(in: view)
             }
         })
+        
     }
 }
 

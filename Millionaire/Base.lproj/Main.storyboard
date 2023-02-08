@@ -221,7 +221,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bdQ-xD-Pag">
                                 <rect key="frame" x="0.66666666666665719" y="262" width="389" height="450"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZ6-tB-IF8">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZ6-tB-IF8">
                                         <rect key="frame" x="33.333333333333343" y="262" width="322" height="54"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="322" id="Mub-Xi-bfl"/>
@@ -238,7 +238,7 @@
                                             <action selector="answerBtnPresesd:" destination="q3L-9z-nKa" eventType="touchUpInside" id="UbJ-YK-QUZ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rx6-va-p2D">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rx6-va-p2D">
                                         <rect key="frame" x="33.333333333333343" y="178" width="322" height="54"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="54" id="2NZ-2z-w6f"/>
@@ -255,7 +255,7 @@
                                             <action selector="answerBtnPresesd:" destination="q3L-9z-nKa" eventType="touchUpInside" id="Z7S-Ra-yuW"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Fv-8H-eNa">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Fv-8H-eNa">
                                         <rect key="frame" x="34" y="94" width="321" height="54"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="321" id="Ubd-De-68j"/>
@@ -272,7 +272,7 @@
                                             <action selector="answerBtnPresesd:" destination="q3L-9z-nKa" eventType="touchUpInside" id="KeT-xF-xvO"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Zk-Df-SfJ">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Zk-Df-SfJ">
                                         <rect key="frame" x="33.333333333333343" y="10" width="322" height="54"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="54" id="ilH-4a-cAX"/>
@@ -415,10 +415,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="wHv-03-U1y"/>
                     <connections>
-                        <outlet property="answerFour" destination="LRI-aA-aQG" id="P33-Pf-o3a"/>
+                        <outlet property="answerFour" destination="nl2-Pc-3yV" id="vXQ-0d-f8s"/>
                         <outlet property="answerOne" destination="Roh-mp-Ugw" id="kyG-m8-t8r"/>
-                        <outlet property="answerThree" destination="nl2-Pc-3yV" id="Giv-fb-zPl"/>
-                        <outlet property="answerTwo" destination="R91-Sn-kdu" id="biv-H9-S4x"/>
+                        <outlet property="answerThree" destination="R91-Sn-kdu" id="Gaa-lc-wv6"/>
+                        <outlet property="answerTwo" destination="LRI-aA-aQG" id="63q-We-tL8"/>
                         <outlet property="questionLbl" destination="GeE-g6-gZk" id="Vd2-FJ-a3e"/>
                     </connections>
                 </viewController>

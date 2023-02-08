@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import AVFoundation
 
 class QuestionViewController: UIViewController {
     
+    var player: AVAudioPlayer!
+    var audioPlayerTimer = Timer()
+
     let allQuestions = AllQuestions()
     var currentQuestion = 0
     var isCorrect: Bool?
@@ -28,12 +32,14 @@ class QuestionViewController: UIViewController {
         } else {
             isCorrect = false
         }
+        playSound(name: "AnswerAccepted")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         getQuestion(index: currentQuestion)
+        playSound(name: "TimerSound")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -57,6 +63,28 @@ class QuestionViewController: UIViewController {
         answerTwo.text = allQuestions.questions[index].answers[1]
         answerThree.text = allQuestions.questions[index].answers[2]
         answerFour.text = allQuestions.questions[index].answers[3]
+    }
+    
+    func playSound(name: String) {
+        if name == "AnswerAccepted" {
+            let url = Bundle.main.url(forResource: name, withExtension: "mp3")
+            player = try! AVAudioPlayer(contentsOf: url!)
+            player.play()
+            audioPlayerTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.stopSound), userInfo: nil, repeats: false)
+        } else {
+            let url = Bundle.main.url(forResource: name, withExtension: "mp3")
+            player = try! AVAudioPlayer(contentsOf: url!)
+            player.play()
+        }
+    }
+    
+    @objc func stopSound() {
+        player.stop()
+        if isCorrect == true {
+            playSound(name: "CorrectAnswer")
+        } else {
+            playSound(name: "WrongAnswer")
+        }
     }
 
 }

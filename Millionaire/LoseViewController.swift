@@ -26,4 +26,12 @@ class LoseViewController: UIViewController {
     }
     */
 
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let target = segue.destination as? StartViewController {
+//            navigationController?.setViewControllers([target], animated: true)
+//        }
+//    }
+
+
+
 }

@@ -34,6 +34,7 @@ class ScoreViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Нажмите, чтобы продолжить"
+        label.textColor = .systemBackground
         tapView.addSubview(label)
         tapView.translatesAutoresizingMaskIntoConstraints = false
         tapView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapContiniueView)))
@@ -107,10 +108,31 @@ class ScoreViewController: UIViewController {
 
     private func presentDefaultError(title: String, text: String) {
         let alertController = UIAlertController(title: title, message: text, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .default))
+        //alertController.addAction(UIAlertAction(title: "OK", style: .default))
+
+        let action = UIAlertAction(title: "OK", style: .default) { action in
+
+                // let vc = LoseViewController()
+
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "loseVC")
+
+            self.navigationController?.pushViewController(vc, animated: true)
+
+
+          //  self.present(vc, animated: false)
+        }
+        alertController.addAction(action)
 
         present(alertController, animated: true)
 
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToLoseVC" {
+            guard let vc = segue.destination as? LoseViewController else { return }
+            navigationController?.pushViewController(vc, animated: false)
+        }
     }
     
     private func createView() {

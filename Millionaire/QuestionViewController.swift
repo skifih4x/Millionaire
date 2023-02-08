@@ -24,22 +24,44 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var answerThree: UILabel!
     @IBOutlet weak var answerFour: UILabel!
     @IBOutlet weak var fiftyFiftyButton: UIButton!
-    
+   
     
     @IBAction func answerBtnPresesd(_ sender: UIButton) {
         if sender.tag == allQuestions.questions[currentQuestion].rightAnswer {
+            print(allQuestions.questions[currentQuestion])
+
             isCorrect = true
+            currentQuestion += 1
+            presentScore(bool: true)
         } else {
             isCorrect = false
+            presentScore(bool: false)
         }
+
         playSound(name: "AnswerAccepted")
+        
+        
+    }
+
+    private func presentScore(bool: Bool) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            let scoreVC = ScoreViewController(currentQuestion: self.currentQuestion + 1, correct: bool)
+
+
+            self.navigationController?.pushViewController(scoreVC, animated: false)
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        getQuestion(index: currentQuestion)
+
         playSound(name: "TimerSound")
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getQuestion(index: currentQuestion)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

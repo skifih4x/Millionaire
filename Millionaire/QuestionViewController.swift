@@ -23,8 +23,8 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var answerTwo: UILabel!
     @IBOutlet weak var answerThree: UILabel!
     @IBOutlet weak var answerFour: UILabel!
-    
-
+    @IBOutlet weak var fiftyFiftyButton: UIButton!
+   
     
     @IBAction func answerBtnPresesd(_ sender: UIButton) {
         if sender.tag == allQuestions.questions[currentQuestion].rightAnswer {
@@ -100,6 +100,12 @@ class QuestionViewController: UIViewController {
         }
     }
     
+    @IBAction func fiftyFiftyButtonPressed(_ sender: UIButton) {
+        getFiftyFifty()
+        playSound(name: "FiftyFifty")
+        fiftyFiftyButton.alpha = 0.5
+        fiftyFiftyButton.isEnabled = false
+    }
     @objc func stopSound() {
         player.stop()
         if isCorrect == true {

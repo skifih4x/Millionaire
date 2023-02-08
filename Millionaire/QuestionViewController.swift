@@ -12,7 +12,7 @@ class QuestionViewController: UIViewController {
     
     var player: AVAudioPlayer!
     var audioPlayerTimer = Timer()
-
+    
     let allQuestions = AllQuestions()
     var currentQuestion = 0
     var isCorrect: Bool?
@@ -24,56 +24,43 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var answerThree: UILabel!
     @IBOutlet weak var answerFour: UILabel!
     
-
+    
     
     @IBAction func answerBtnPresesd(_ sender: UIButton) {
         if sender.tag == allQuestions.questions[currentQuestion].rightAnswer {
             print(allQuestions.questions[currentQuestion])
-
             isCorrect = true
-            currentQuestion += 1
-            presentScore(bool: true)
         } else {
             isCorrect = false
-            presentScore(bool: false)
         }
-
+        currentQuestion += 1
+        
+        presentScore(bool: isCorrect ?? false)
+        
         playSound(name: "AnswerAccepted")
         
         
     }
-
+    
     private func presentScore(bool: Bool) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-            let scoreVC = ScoreViewController(currentQuestion: self.currentQuestion + 1, correct: bool)
-
-
+            let scoreVC = ScoreViewController(currentQuestion: self.currentQuestion, correct: bool)
+            
+            
             self.navigationController?.pushViewController(scoreVC, animated: false)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
+        
+        
         playSound(name: "TimerSound")
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getQuestion(index: currentQuestion)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC: ScoreViewController = segue.destination as! ScoreViewController
-        
-        if isCorrect == true {
-            destinationVC.isCorrect = true
-        } else {
-            destinationVC.isCorrect = false
-        }
-        
-        destinationVC.currentQuestion = currentQuestion
     }
     
     func getQuestion(index: Int) {
@@ -108,5 +95,4 @@ class QuestionViewController: UIViewController {
             playSound(name: "WrongAnswer")
         }
     }
-
 }

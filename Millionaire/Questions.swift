@@ -75,6 +75,10 @@ struct AllQuestions {
                  answers: ["Гафний", "Бериллий", "Теллур", "Кобальт"],
                  rightAnswer: 4, cash: 1_000_000)
     ]
+
+    func getQuestionCash(questionNumber: Int) -> Int {
+        return questions[questionNumber - 1].cash
+    }
     
    
 }

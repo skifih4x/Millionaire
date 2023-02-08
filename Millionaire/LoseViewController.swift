@@ -9,28 +9,21 @@ import UIKit
 
 class LoseViewController: UIViewController {
 
+    var moneyWonCount: Int!
+
+    @IBOutlet weak var looseDescriptionLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+    }
 
-        // Do any additional setup after loading the view.
+    private func setupUI() {
+        guard let moneyWonCount else { return }
+        looseDescriptionLabel.text = "Ваш выигрыш составил \(moneyWonCount) рублей"
+
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let target = segue.destination as? StartViewController {
-//            navigationController?.setViewControllers([target], animated: true)
-//        }
-//    }
 
 
 

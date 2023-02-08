@@ -16,6 +16,7 @@
 		8464E5D7298FF256003021C9 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464E5D6298FF256003021C9 /* QuestionViewController.swift */; };
 		8464E5D929903BB5003021C9 /* LoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464E5D829903BB5003021C9 /* LoseViewController.swift */; };
 		8464E5DB29904219003021C9 /* LevelPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464E5DA29904219003021C9 /* LevelPlayerViewController.swift */; };
+		8464E5DD2992FFA6003021C9 /* RulesGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464E5DC2992FFA6003021C9 /* RulesGameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		8464E5D6298FF256003021C9 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		8464E5D829903BB5003021C9 /* LoseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoseViewController.swift; sourceTree = "<group>"; };
 		8464E5DA29904219003021C9 /* LevelPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelPlayerViewController.swift; sourceTree = "<group>"; };
+		8464E5DC2992FFA6003021C9 /* RulesGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesGameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				8464E5D6298FF256003021C9 /* QuestionViewController.swift */,
 				8464E5D829903BB5003021C9 /* LoseViewController.swift */,
 				8464E5DA29904219003021C9 /* LevelPlayerViewController.swift */,
+				8464E5DC2992FFA6003021C9 /* RulesGameViewController.swift */,
 				0059CEED298FBC81004D2534 /* Main.storyboard */,
 				0059CEF0298FBC82004D2534 /* Assets.xcassets */,
 				0059CEF2298FBC82004D2534 /* LaunchScreen.storyboard */,
@@ -150,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8464E5DD2992FFA6003021C9 /* RulesGameViewController.swift in Sources */,
 				0059CEEC298FBC81004D2534 /* StartViewController.swift in Sources */,
 				0059CEE8298FBC81004D2534 /* AppDelegate.swift in Sources */,
 				8464E5D7298FF256003021C9 /* QuestionViewController.swift in Sources */,

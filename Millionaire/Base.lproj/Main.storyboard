@@ -9,6 +9,89 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Rules Game View Controller-->
+        <scene sceneID="jUZ-0Q-1zK">
+            <objects>
+                <viewController id="Dko-Kt-pkT" customClass="RulesGameViewController" customModule="Millionaire" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bvg-kZ-imN">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="g4Y-nx-WTT">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="k09-Dk-wVF">
+                                <rect key="frame" x="16" y="37" width="358" height="668"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Игра Кто хочет стать миллионером? - это конкурс викторина, в котором участники должны правильно ответить на ряд вопросов с несколькими вариантами ответов, чтобы перейти на следующий уровень. Всего 15 вопросов, каждый вопрос стоит определенной суммы денег, участники не имеют никаких временных ограничений для предоставления ответа. Участники также получают три вида подсказок, чтобы помочь себе, если они застряли на конкретном вопросе.
+        
+    Вопросы “Кто хочет стать миллионером?” структурированы в соответствии с пятью различными уровнями, причем уровень сложности постепенно увеличивается. Каждый уровень содержит три вопроса.
+    Вопросы, сгруппированные на одном уровне, будут иметь одинаковую сложность. Например: вопросы 1-3 составляют первый уровень и будут содержать самые простые вопросы. Второй уровень (вопросы 4–6) будет несколько сложнее, за ним следует третий уровень (вопросы 7–9). Четвертый уровень (вопросы 10–12) будет состоять из действительно сложных вопросов, за которыми следует пятый и последний уровень (вопросы 13–15), имеющий самые сложные вопросы в игре.
+    Важно помнить, что вопросы, составляющие каждый уровень, не обязательно будут относиться к одним и тем же или даже сходным темам, но их общий уровень сложности будет одинаковым. Немаловажно, что уровни вопросов не следует путать с «несгораемыми суммами» или структурой ценностей вопросов, что они собой являют объясняется ниже.
+    Важно помнить, что вопросы, составляющие каждый уровень, не обязательно будут относиться к одним и тем же или даже сходным темам, но их общий уровень сложности будет одинаковым. Немаловажно, что уровни вопросов не следует путать с «несгораемыми суммами» или структурой ценностей вопросов, что они собой являют объясняется ниже.
+    Вопрос 1 100 руб.
+    Вопрос 2 200 руб.
+    Вопрос 3 300 руб.
+    Вопрос 4 500 руб.
+    Вопрос 5 - 1000 руб. Несгораемая сумма.
+    Если участники неправильно отвечают на последний вопрос вопрос, то они уходят ни с чем. Если на этот вопрос дан правильный ответ, участникам гарантируется 1000 рублей, даже если дадут неверный ответ до достижения следующей несгораемой суммы в десятом вопросе.
+    Вопрос 6 2000 руб.
+    Вопрос 7 4000 руб.
+    Вопрос 8 8000 руб.
+    Вопрос 9 16 000 руб.
+    Вопрос 10 - 32 000 руб. Несгораемая сумма.
+    Если участники неправильно ответят на этот вопрос, они уйдут с 1000 рублей. Если на этот вопрос ответили верно, игрокам гарантируется 32 000 рублей, даже если дадут неверный ответ до достижения вопроса 15.
+    Вопрос 11 64 000 руб.
+    Вопрос 12 125 000 руб.
+    Вопрос 13 250 000 руб.
+    Вопрос 14 500 000 руб.
+    Вопрос 15 - 1 000 000 руб.
+    Подсказки
+    Участникам разрешается применить три подсказки, которые они могут использовать в любой момент викторины. Каждая из подсказок может быть использована только один раз.
+    50/50 - исключает два неправильных ответа из множественного выбора, оставляя участнику только один правильный и один неправильный вариант. Это означает, что у него есть шанс 50/50.
+    Задать вопрос аудитории - залу задают тот же вопрос, что и участнику, и проводится быстрый опрос, чтобы показать их ответы. На диаграмме показывается явное преимущество определенного варианта, эта подсказка может быть чрезвычайно полезной. Участнику дается возможность согласиться с результатами, полученными от аудитории.
+    Позвоните другу - участникам разрешается сделать 30-секундный звонок другу или члену семьи и спросить, знают ли они ответ на вопрос.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Phs-cz-7e4">
+                                <rect key="frame" x="0.0" y="711" width="390" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Я хочу продолжить">
+                                            <attributes>
+                                                <font key="NSFont" size="18" name="Helvetica"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" red="0.32549019607843138" green="0.88235294117647056" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="eZN-4r-Whj" kind="show" id="Mwz-fg-iWq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sgZ-fK-4F2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="g4Y-nx-WTT" firstAttribute="trailing" secondItem="sgZ-fK-4F2" secondAttribute="trailing" id="1Ow-BT-8pd"/>
+                            <constraint firstItem="sgZ-fK-4F2" firstAttribute="trailing" secondItem="Phs-cz-7e4" secondAttribute="trailing" id="DuT-oN-yXd"/>
+                            <constraint firstAttribute="bottom" secondItem="g4Y-nx-WTT" secondAttribute="bottom" id="KcZ-Jm-ogW"/>
+                            <constraint firstItem="Phs-cz-7e4" firstAttribute="leading" secondItem="sgZ-fK-4F2" secondAttribute="leading" id="Nwb-oV-hkS"/>
+                            <constraint firstItem="g4Y-nx-WTT" firstAttribute="leading" secondItem="sgZ-fK-4F2" secondAttribute="leading" id="hTC-nH-fR9"/>
+                            <constraint firstItem="g4Y-nx-WTT" firstAttribute="top" secondItem="Bvg-kZ-imN" secondAttribute="top" id="mlt-h2-5Mi"/>
+                            <constraint firstItem="sgZ-fK-4F2" firstAttribute="bottom" secondItem="Phs-cz-7e4" secondAttribute="bottom" constant="10" id="yC1-U2-bfM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Edr-mH-5eL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BSb-5p-Uk4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="920" y="-572.2748815165877"/>
+        </scene>
         <!--Start View Controller-->
         <scene sceneID="e8n-Cj-gh1">
             <objects>
@@ -34,6 +117,9 @@
                                     <attributedString key="attributedSubtitle"/>
                                     <color key="baseForegroundColor" red="0.32549019607843138" green="0.88235294117647056" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="Dko-Kt-pkT" kind="show" id="foe-gj-VlJ"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="wcX-If-1Ob">
                                 <rect key="frame" x="82.666666666666686" y="5" width="225" height="225"/>
@@ -573,8 +659,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fdp-qd-nWJ"/>
-        <segue reference="ftR-q7-ckU"/>
+        <segue reference="Mwz-fg-iWq"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Group 29-1" width="105" height="85"/>
@@ -586,6 +671,9 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

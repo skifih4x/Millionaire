@@ -398,6 +398,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="wHv-03-U1y"/>
                     <connections>
+                        <outlet property="cash" destination="OqP-AW-PAM" id="QO9-wN-W2f"/>
+                        <outlet property="numbOfQuestion" destination="QLW-er-RHP" id="Lgo-tG-NBX"/>
                         <outlet property="questionLbl" destination="GeE-g6-gZk" id="Vd2-FJ-a3e"/>
                         <outletCollection property="answersLbl" destination="Roh-mp-Ugw" collectionClass="NSMutableArray" id="0Mw-BK-M7O"/>
                         <outletCollection property="answersLbl" destination="LRI-aA-aQG" collectionClass="NSMutableArray" id="d1U-DT-7VY"/>

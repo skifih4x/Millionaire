@@ -19,6 +19,8 @@ class QuestionViewController: UIViewController {
     var answerTag: Int?
     
     
+    @IBOutlet weak var cash: UILabel!
+    @IBOutlet weak var numbOfQuestion: UILabel!
     @IBOutlet weak var questionLbl: UILabel!
     @IBOutlet var answersLbl: [UILabel]!
     @IBOutlet var answersBtn: [UIButton]!
@@ -31,7 +33,7 @@ class QuestionViewController: UIViewController {
             isCorrect = false
         }
         answerTag = sender.tag
-        answerChecking(name: "AnswerAccepted")
+        answerIsChecking(name: "AnswerAccepted")
         
         for answer in answersBtn {
             answer.isEnabled = false
@@ -42,8 +44,12 @@ class QuestionViewController: UIViewController {
         super.viewDidLoad()
         
         getQuestion(index: currentQuestion)
-        answerChecking(name: "TimerSound")
+        answerIsChecking(name: "TimerSound")
+        numbOfQuestion.text = String(currentQuestion)
+        cash.text = String(allQuestions.questions[currentQuestion].cash)
     }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC: ScoreViewController = segue.destination as! ScoreViewController
@@ -68,12 +74,17 @@ class QuestionViewController: UIViewController {
         answersLbl[3].text = allQuestions.questions[index].answers[3]
     }
     
-    func answerChecking(name: String) {
+    func answerIsChecking(name: String) {
         if name == "AnswerAccepted" {
             let url = Bundle.main.url(forResource: name, withExtension: "mp3")
             player = try! AVAudioPlayer(contentsOf: url!)
             player.play()
-            audioPlayerTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.checkStopped), userInfo: nil, repeats: false)
+            if isCorrect == true {
+                audioPlayerTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.checkStopped), userInfo: nil, repeats: false)
+            } else {
+                audioPlayerTimer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.checkStopped), userInfo: nil, repeats: false)
+            }
+            
         } else {
             let url = Bundle.main.url(forResource: name, withExtension: "mp3")
             player = try! AVAudioPlayer(contentsOf: url!)
@@ -83,14 +94,17 @@ class QuestionViewController: UIViewController {
     
     @objc func checkStopped() {
         player.stop()
-        answersBtn[answerTag! - 1].isEnabled = true
+    
         if isCorrect == true {
             answersBtn[answerTag! - 1].setBackgroundImage(UIImage(named: "RectangleGreen"), for: .normal)
-            answerChecking(name: "CorrectAnswer")
+            answerIsChecking(name: "CorrectAnswer")
         } else {
             answersBtn[answerTag! - 1].setBackgroundImage(UIImage(named: "RectangleRed"), for: .normal)
-            answerChecking(name: "WrongAnswer")
+            answerIsChecking(name: "WrongAnswer")
+            answersBtn[allQuestions.questions[currentQuestion].rightAnswer - 1].setBackgroundImage(UIImage(named: "RectangleGreen"), for: .normal)
         }
+        answersBtn[answerTag! - 1].isEnabled = true
+        answersBtn[allQuestions.questions[currentQuestion].rightAnswer - 1].isEnabled = true
     }
 
 }

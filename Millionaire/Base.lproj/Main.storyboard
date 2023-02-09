@@ -375,11 +375,17 @@
                                         <rect key="frame" x="134.33333333333334" y="0.0" width="121.33333333333334" height="99"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="Group 29-1" imagePadding="0.0"/>
+                                        <connections>
+                                            <action selector="hallHelpButtonPressed:" destination="q3L-9z-nKa" eventType="touchUpInside" id="bju-Zp-Ls1"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7J-7u-1b3">
                                         <rect key="frame" x="268.66666666666669" y="2" width="121.33333333333331" height="95"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="Group 30"/>
+                                        <connections>
+                                            <action selector="callFriendButtonPressed:" destination="q3L-9z-nKa" eventType="touchUpInside" id="Qyr-zV-nbX"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -421,7 +427,9 @@
                         <outlet property="answerThreeBtn" destination="Rx6-va-p2D" id="VTh-Py-0Fo"/>
                         <outlet property="answerTwo" destination="LRI-aA-aQG" id="63q-We-tL8"/>
                         <outlet property="answerTwoBtn" destination="7Fv-8H-eNa" id="whK-bJ-FYB"/>
+                        <outlet property="callFriendButton" destination="q7J-7u-1b3" id="Sxk-CI-kaJ"/>
                         <outlet property="fiftyFiftyButton" destination="qNQ-q6-iBx" id="QHf-MZ-Syh"/>
+                        <outlet property="hallHelpButton" destination="Jmb-TK-ZFq" id="zGr-7Y-kte"/>
                         <outlet property="questionLbl" destination="GeE-g6-gZk" id="Vd2-FJ-a3e"/>
                     </connections>
                 </viewController>

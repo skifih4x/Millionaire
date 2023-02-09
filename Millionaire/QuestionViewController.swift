@@ -30,6 +30,13 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var answerFourBtn: UIButton!
     @IBOutlet weak var fiftyFiftyButton: UIButton!
  
+    @IBOutlet weak var hallHelpButton: UIButton!
+    
+    @IBOutlet weak var callFriendButton: UIButton!
+    
+    
+    
+    
     
     @IBAction func answerBtnPresesd(_ sender: UIButton) {
         if sender.tag == allQuestions.questions[currentQuestion].rightAnswer {
@@ -93,6 +100,26 @@ class QuestionViewController: UIViewController {
             player.play()
         }
     }
+    
+    @IBAction func hallHelpButtonPressed(_ sender: UIButton) {
+        hallHelp()
+        
+        hallHelpButton.isEnabled = false
+        hallHelpButton.alpha = 0.5
+        
+    }
+    
+    @IBAction func callFriendButtonPressed(_ sender: UIButton) {
+        callFriend()
+        
+        callFriendButton.isEnabled = false
+        callFriendButton.alpha = 0.5
+        
+    }
+    
+    
+    
+    
     
     @IBAction func fiftyFiftyButtonPressed(_ sender: UIButton) {
         getFiftyFifty()

@@ -9,8 +9,8 @@ import UIKit
 
 class ScoreViewController: UIViewController {
     
-    private var currentQuestion: Int!
-    private var isCorrect: Bool!
+     var currentQuestion: Int!
+     var isCorrect: Bool!
 
     private var moneyWon: Int = 0
 

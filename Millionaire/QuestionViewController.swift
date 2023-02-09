@@ -27,13 +27,13 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var answerTwo: UILabel!
     @IBOutlet weak var answerThree: UILabel!
     @IBOutlet weak var answerFour: UILabel!
-
+    
     @IBOutlet weak var answerOneBtn: UIButton!
     @IBOutlet weak var answerTwoBtn: UIButton!
     @IBOutlet weak var answerThreeBtn: UIButton!
     @IBOutlet weak var answerFourBtn: UIButton!
     @IBOutlet weak var fiftyFiftyButton: UIButton!
- 
+    
     @IBOutlet weak var hallHelpButton: UIButton!
     
     @IBOutlet weak var callFriendButton: UIButton!
@@ -41,21 +41,21 @@ class QuestionViewController: UIViewController {
     
     
     
-
+    
     @IBOutlet var answersLbl: [UILabel]!
     @IBOutlet var answersBtn: [UIButton]!
-
+    
     
     @IBAction func answerBtnPresesd(_ sender: UIButton) {
         
         if sender.tag == allQuestions.questions[currentQuestion].rightAnswer {
-            print(allQuestions.questions[currentQuestion])
+            
             isCorrect = true
         } else {
             isCorrect = false
         }
-
-        currentQuestion += 1
+        
+//
         
         presentScore(bool: isCorrect ?? false)
         
@@ -66,15 +66,16 @@ class QuestionViewController: UIViewController {
         
         for answer in answersBtn {
             answer.isEnabled = false
+        }
     }
     
     private func presentScore(bool: Bool) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {
             let scoreVC = ScoreViewController(currentQuestion: self.currentQuestion, correct: bool)
             
-            
+        
             self.navigationController?.pushViewController(scoreVC, animated: false)
-
+            
         }
     }
     
@@ -87,10 +88,11 @@ class QuestionViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
         getQuestion(index: currentQuestion)
         (answerOne.isHidden, answerTwo.isHidden, answerThree.isHidden, answerFour.isHidden) = (false, false, false, false)
         (answerOneBtn.isEnabled, answerTwoBtn.isEnabled, answerThreeBtn.isEnabled, answerFourBtn.isEnabled) = (true, true, true, true)
-
+        
         getQuestion(index: currentQuestion)
         answerIsChecking(name: "TimerSound")
         numbOfQuestion.text = String(currentQuestion)
@@ -99,17 +101,6 @@ class QuestionViewController: UIViewController {
     
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC: ScoreViewController = segue.destination as! ScoreViewController
-        
-        if isCorrect == true {
-            destinationVC.isCorrect = true
-        } else {
-            destinationVC.isCorrect = false
-        }
-        
-        destinationVC.currentQuestion = currentQuestion
-    }
     
     func getQuestion(index: Int) {
         
@@ -140,7 +131,7 @@ class QuestionViewController: UIViewController {
         }
     }
     
-
+    
     @IBAction func hallHelpButtonPressed(_ sender: UIButton) {
         hallHelp()
         
@@ -169,9 +160,9 @@ class QuestionViewController: UIViewController {
     }
     
     @objc func checkStopped() {
-
+        
         player.stop()
-    
+        
         if isCorrect == true {
             answersBtn[answerTag! - 1].setBackgroundImage(UIImage(named: "RectangleGreen"), for: .normal)
             answerIsChecking(name: "CorrectAnswer")
@@ -184,3 +175,4 @@ class QuestionViewController: UIViewController {
         answersBtn[allQuestions.questions[currentQuestion].rightAnswer - 1].isEnabled = true
     }
 }
+

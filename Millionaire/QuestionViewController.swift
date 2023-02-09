@@ -24,6 +24,7 @@ class QuestionViewController: UIViewController {
     @IBOutlet var answersBtn: [UIButton]!
     
     @IBAction func answerBtnPresesd(_ sender: UIButton) {
+        
         if sender.tag == allQuestions.questions[currentQuestion].rightAnswer {
             isCorrect = true
         } else {
@@ -31,6 +32,10 @@ class QuestionViewController: UIViewController {
         }
         answerTag = sender.tag
         answerChecking(name: "AnswerAccepted")
+        
+        for answer in answersBtn {
+            answer.isEnabled = false
+        }
     }
     
     override func viewDidLoad() {
@@ -78,6 +83,7 @@ class QuestionViewController: UIViewController {
     
     @objc func checkStopped() {
         player.stop()
+        answersBtn[answerTag! - 1].isEnabled = true
         if isCorrect == true {
             answersBtn[answerTag! - 1].setBackgroundImage(UIImage(named: "RectangleGreen"), for: .normal)
             answerChecking(name: "CorrectAnswer")

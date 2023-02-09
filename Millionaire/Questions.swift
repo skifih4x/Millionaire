@@ -27,10 +27,6 @@ struct AllQuestions {
                  answers: ["Самокат", "Самолет", "Самосвал", "Самовар"],
                  rightAnswer: 4, cash: 500),
         
-        Question(question: "Какую страну не относят к Скандинавии?",
-                 answers: ["Норвегию", "Швецию", "Данию", "Нидерланды"],
-                 rightAnswer: 4, cash: 500),
-        
         Question(question: "Что в 90-е годы прошлого века было модно превращать в варёнку?",
                  answers: ["Ткань", "Грибы", "Макулатуру", "Серебро"],
                  rightAnswer: 1, cash: 1000),
@@ -75,6 +71,10 @@ struct AllQuestions {
                  answers: ["Гафний", "Бериллий", "Теллур", "Кобальт"],
                  rightAnswer: 4, cash: 1_000_000)
     ]
+
+    func getQuestionCash(questionNumber: Int) -> Int {
+        return questions[questionNumber - 1].cash
+    }
     
    
 }

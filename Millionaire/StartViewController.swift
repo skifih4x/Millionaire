@@ -16,6 +16,11 @@ class StartViewController: UIViewController {
 
     @IBAction func srartGamePressed(_ sender: UIButton) {
     }
+
+    @IBAction func unwindSegue(_ sender: UIStoryboardSegue){
+
+        }
+
     
 }
 

@@ -9,16 +9,23 @@ import UIKit
 
 class ScoreViewController: UIViewController {
     
-    var currentQuestion: Int!
-    var isCorrect: Bool!
-    
-    //    lazy var backgroundView: UIImageView = {
-    //        let backgroundView = UIImageView()
-    //        backgroundView.translatesAutoresizingMaskIntoConstraints = false
-    //        backgroundView.image = UIImage(named: "background")!
-    //
-    //        return backgroundView
-    //    }()
+    private var currentQuestion: Int!
+    private var isCorrect: Bool!
+
+    private var moneyWon: Int = 0
+
+    private let allQuestions = AllQuestions()
+
+    lazy var takeMoneyButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Забрать деньги", for: .normal)
+        button.backgroundColor = #colorLiteral(red: 0.3017496034, green: 0.1880411259, blue: 0.5, alpha: 1)
+        button.layer.cornerRadius = 16
+        button.addTarget(self, action: #selector(takeMoneyPressed), for: .touchUpInside)
+        return button
+    }()
+
     
     lazy var overallStackView: UIStackView = {
         let stackView = UIStackView()
@@ -34,6 +41,7 @@ class ScoreViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Нажмите, чтобы продолжить"
+        label.textColor = .systemBackground
         tapView.addSubview(label)
         tapView.translatesAutoresizingMaskIntoConstraints = false
         tapView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapContiniueView)))
@@ -53,14 +61,10 @@ class ScoreViewController: UIViewController {
         
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         navigationItem.hidesBackButton = true
-        
-        
-        
-        createView()
+
+        setupUI()
     }
-    
-    
-    
+
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -79,6 +83,25 @@ class ScoreViewController: UIViewController {
         super.viewDidAppear(animated)
         checkForLoose(currentQuestion: currentQuestion)
     }
+
+    @objc func takeMoneyPressed() {
+        let alert = UIAlertController(title: "Забрать деньги?", message: "Вы уверены?", preferredStyle: .alert)
+
+        let confirmAction = UIAlertAction(title: "Да", style: .default) { _ in
+            let moneyCount = self.allQuestions.getQuestionCash(questionNumber: self.currentQuestion)
+            self.presentDefaultAlert(title: "Вы забрали деньги",
+                                     text: "Сумма \(moneyCount)",
+                                     buttonText: "Попробовать еще?", with: moneyCount)
+        }
+
+        let cancelAction = UIAlertAction(title: "Нет", style: .cancel)
+
+        alert.addAction(confirmAction)
+        alert.addAction(cancelAction)
+
+        present(alert, animated: true)
+
+    }
     
     
     @objc func didTapContiniueView() {
@@ -87,39 +110,73 @@ class ScoreViewController: UIViewController {
     
     private func createStacksWithQuestions() {
         stride(from: 15, to: 0, by: -1) .forEach { num in
-            overallStackView.addArrangedSubview(createViewWithQuestion(questionNumber: num, moneycount: num * 100))
+            overallStackView.addArrangedSubview(createViewWithQuestion(questionNumber: num,
+                                                                       moneycount: allQuestions.getQuestionCash(questionNumber: num)))
         }
     }
     
     private func checkForLoose(currentQuestion: Int) {
+        var currentQuestion = currentQuestion
+
         if !isCorrect {
-            switch currentQuestion {
-            case 1...5:
-                presentDefaultError(title: "Вы проиграли", text: "Проиграли..")
-            case 6...10:
-                presentDefaultError(title: "Вы проиграли", text: "Забираете 1000 рублей")
-            case 11...15:
-                presentDefaultError(title: "Вы проиграли", text: "Забираете 33000 рублей")
-            default: assertionFailure("only 15 questions")
-            }
+            presentDefaultAlert(title: "Вы проиграли", text: "Хотите попробовать еще раз?",
+                                buttonText: "Попробовать еще раз")
+        } else {
+            currentQuestion += 1
+        }
+        switch currentQuestion {
+        case 1...5:
+            self.moneyWon = 0
+        case 6...10:
+            self.moneyWon = 1000
+        case 10...14:
+            self.moneyWon = 32000
+        case 15: self.moneyWon = 1000_000
+            presentDefaultAlert(title: "Вы победили!", text: "Хотите попробовать еще раз?",
+                                buttonText: "Попробовать еще раз")
+        default: break
+
         }
     }
 
-    private func presentDefaultError(title: String, text: String) {
+    private func presentDefaultAlert(title: String, text: String, buttonText: String, with moneyCount: Int? = nil) {
         let alertController = UIAlertController(title: title, message: text, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .default))
+
+        let action = UIAlertAction(title: buttonText, style: .default) { action in
+
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let looseVC = storyboard.instantiateViewController(withIdentifier: "loseVC") as! LoseViewController
+            if let moneyCount {
+                looseVC.moneyWonCount = moneyCount
+            } else {
+                looseVC.moneyWonCount = self.moneyWon
+            }
+
+            self.navigationController?.pushViewController(looseVC, animated: true)
+        }
+
+        alertController.addAction(action)
 
         present(alertController, animated: true)
 
     }
+
     
-    private func createView() {
+    private func setupUI() {
         setBackground(in: view, with: "background")
         
         view.addSubview(overallStackView)
         view.addSubview(continieTapView)
-        
+        view.addSubview(takeMoneyButton)
+
         NSLayoutConstraint.activate([
+
+            takeMoneyButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -20),
+            takeMoneyButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            takeMoneyButton.heightAnchor.constraint(equalToConstant: 40),
+            takeMoneyButton.widthAnchor.constraint(equalToConstant: 150),
+
+
             continieTapView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             continieTapView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             continieTapView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -161,13 +218,10 @@ class ScoreViewController: UIViewController {
         
         switch questionNumber {
             
-        case 5: viewForQuestion.backgroundColor = .systemBlue
-            setBackground(in: viewForQuestion, with: RectangleImages.blue.rawValue)
-        case 10: viewForQuestion.backgroundColor = .systemBlue
-            setBackground(in: viewForQuestion, with: RectangleImages.blue.rawValue)
-        case 15:
-            setBackground(in: viewForQuestion, with: RectangleImages.yellow.rawValue)
-            viewForQuestion.backgroundColor = .systemYellow
+        case 5: setBackground(in: viewForQuestion, with: RectangleImages.blue.rawValue)
+        case 10: setBackground(in: viewForQuestion, with: RectangleImages.blue.rawValue)
+        case 15: setBackground(in: viewForQuestion, with: RectangleImages.yellow.rawValue)
+
         default:
             viewForQuestion.backgroundColor = .systemPurple
             setBackground(in: viewForQuestion, with: RectangleImages.purple.rawValue)
@@ -183,6 +237,7 @@ class ScoreViewController: UIViewController {
         
         return viewForQuestion
     }
+
     
     
     private func setBackground(in view: UIView, with backgroundName: String) {
@@ -206,9 +261,9 @@ class ScoreViewController: UIViewController {
             return view as? UIImageView
         })[0]
         
-    //  let currentImageBackground = backGroundImageView.image
-        let flashingBackgroundView: UIImage = self.isCorrect ? UIImage(named: RectangleImages.green.rawValue)! : UIImage(named: RectangleImages.red
-            .rawValue)!
+        let flashingBackgroundView: UIImage = self.isCorrect
+        ? UIImage(named: RectangleImages.green.rawValue)!
+        : UIImage(named: RectangleImages.red.rawValue)!
         
         
         UIView.transition(with: backGroundImageView,

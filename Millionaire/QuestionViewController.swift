@@ -12,31 +12,73 @@ class QuestionViewController: UIViewController {
     
     var player: AVAudioPlayer!
     var audioPlayerTimer = Timer()
-
+    
     let allQuestions = AllQuestions()
     var currentQuestion = 0
     var isCorrect: Bool?
     var answerTag: Int?
     
+
     
     @IBOutlet weak var cash: UILabel!
     @IBOutlet weak var numbOfQuestion: UILabel!
     @IBOutlet weak var questionLbl: UILabel!
     @IBOutlet var answersLbl: [UILabel]!
     @IBOutlet var answersBtn: [UIButton]!
+
+    @IBOutlet weak var questionLbl: UILabel!
+    
+    @IBOutlet weak var answerOne: UILabel!
+    @IBOutlet weak var answerTwo: UILabel!
+    @IBOutlet weak var answerThree: UILabel!
+    @IBOutlet weak var answerFour: UILabel!
+
+    @IBOutlet weak var answerOneBtn: UIButton!
+    @IBOutlet weak var answerTwoBtn: UIButton!
+    @IBOutlet weak var answerThreeBtn: UIButton!
+    @IBOutlet weak var answerFourBtn: UIButton!
+    @IBOutlet weak var fiftyFiftyButton: UIButton!
+ 
+    @IBOutlet weak var hallHelpButton: UIButton!
+    
+    @IBOutlet weak var callFriendButton: UIButton!
+    
+    
+    
+    
+
     
     @IBAction func answerBtnPresesd(_ sender: UIButton) {
         
         if sender.tag == allQuestions.questions[currentQuestion].rightAnswer {
+            print(allQuestions.questions[currentQuestion])
             isCorrect = true
         } else {
             isCorrect = false
         }
+
         answerTag = sender.tag
         answerIsChecking(name: "AnswerAccepted")
         
         for answer in answersBtn {
             answer.isEnabled = false
+
+        currentQuestion += 1
+        
+        presentScore(bool: isCorrect ?? false)
+        
+        playSound(name: "AnswerAccepted")
+        
+        
+    }
+    
+    private func presentScore(bool: Bool) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            let scoreVC = ScoreViewController(currentQuestion: self.currentQuestion, correct: bool)
+            
+            
+            self.navigationController?.pushViewController(scoreVC, animated: false)
+
         }
     }
     
@@ -61,6 +103,15 @@ class QuestionViewController: UIViewController {
         }
         
         destinationVC.currentQuestion = currentQuestion
+        
+        playSound(name: "TimerSound")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getQuestion(index: currentQuestion)
+        (answerOne.isHidden, answerTwo.isHidden, answerThree.isHidden, answerFour.isHidden) = (false, false, false, false)
+        (answerOneBtn.isEnabled, answerTwoBtn.isEnabled, answerThreeBtn.isEnabled, answerFourBtn.isEnabled) = (true, true, true, true)
     }
     
     func getQuestion(index: Int) {
@@ -93,6 +144,34 @@ class QuestionViewController: UIViewController {
     }
     
     @objc func checkStopped() {
+    @IBAction func hallHelpButtonPressed(_ sender: UIButton) {
+        hallHelp()
+        
+        hallHelpButton.isEnabled = false
+        hallHelpButton.alpha = 0.5
+        
+    }
+    
+    @IBAction func callFriendButtonPressed(_ sender: UIButton) {
+        callFriend()
+        
+        callFriendButton.isEnabled = false
+        callFriendButton.alpha = 0.5
+        
+    }
+    
+    
+    
+    
+    
+    @IBAction func fiftyFiftyButtonPressed(_ sender: UIButton) {
+        getFiftyFifty()
+        playSound(name: "FiftyFifty")
+        fiftyFiftyButton.alpha = 0.5
+        fiftyFiftyButton.isEnabled = false
+    }
+    @objc func stopSound() {
+
         player.stop()
     
         if isCorrect == true {
@@ -106,5 +185,4 @@ class QuestionViewController: UIViewController {
         answersBtn[answerTag! - 1].isEnabled = true
         answersBtn[allQuestions.questions[currentQuestion].rightAnswer - 1].isEnabled = true
     }
-
 }

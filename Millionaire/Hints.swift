@@ -23,11 +23,16 @@ extension QuestionViewController {
         let secondWA = pickTwoWA[1]
         if answerOne.text == firstWA || answerOne.text == secondWA {
             answerOne.isHidden = true
+            answerOneBtn.isEnabled = false
         }; if answerTwo.text == firstWA || answerTwo.text == secondWA {
             answerTwo.isHidden = true
+            answerTwoBtn.isEnabled = false
         }; if answerThree.text == firstWA || answerThree.text == secondWA {
             answerThree.isHidden = true
+            answerThreeBtn.isEnabled = false
         }; if answerFour.text == firstWA || answerFour.text == secondWA {
-            answerFour.isHidden = true}
+            answerFour.isHidden = true
+            answerFourBtn.isEnabled = false
+        }
     }
 }

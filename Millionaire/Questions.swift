@@ -75,6 +75,10 @@ struct AllQuestions {
     func getQuestionCash(questionNumber: Int) -> Int {
         return questions[questionNumber - 1].cash
     }
+
+    func getRightAnswerIndex(questionNumber: Int) -> Int {
+        return questions[questionNumber - 1].rightAnswer - 1
+    }
     
    
 }

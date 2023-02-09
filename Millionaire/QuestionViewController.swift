@@ -38,10 +38,7 @@ class QuestionViewController: UIViewController {
     
     @IBOutlet weak var callFriendButton: UIButton!
     
-    
-    
-    
-    
+
     @IBOutlet var answersLbl: [UILabel]!
     @IBOutlet var answersBtn: [UIButton]!
     
@@ -49,20 +46,15 @@ class QuestionViewController: UIViewController {
     @IBAction func answerBtnPresesd(_ sender: UIButton) {
         
         if sender.tag == allQuestions.questions[currentQuestion].rightAnswer {
-            
+    
             isCorrect = true
         } else {
             isCorrect = false
         }
 
         currentQuestion += 1
-        
-//
-        
         presentScore(bool: isCorrect ?? false)
-        
         answerIsChecking(name: "AnswerAccepted")
-        
         answerTag = sender.tag
         answerIsChecking(name: "AnswerAccepted")
         
@@ -72,38 +64,28 @@ class QuestionViewController: UIViewController {
     private func presentScore(bool: Bool) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {
             let scoreVC = ScoreViewController(currentQuestion: self.currentQuestion, correct: bool)
-            
-        
             self.navigationController?.pushViewController(scoreVC, animated: false)
-            
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         answerIsChecking(name: "TimerSound")
     }
-    
+
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
         getQuestion(index: currentQuestion)
-        (answerOne.isHidden, answerTwo.isHidden, answerThree.isHidden, answerFour.isHidden) = (false, false, false, false)
-        (answerOneBtn.isEnabled, answerTwoBtn.isEnabled, answerThreeBtn.isEnabled, answerFourBtn.isEnabled) = (true, true, true, true)
-        answersBtn.forEach {$0.setBackgroundImage(UIImage(named: RectangleImages.blue.rawValue), for: .normal) }
+        setButtonsBackToDefault()
 
-        getQuestion(index: currentQuestion)
         answerIsChecking(name: "TimerSound")
-        numbOfQuestion.text = String(currentQuestion)
+        numbOfQuestion.text = String(currentQuestion + 1)
         cash.text = String(allQuestions.questions[currentQuestion].cash)
     }
     
     
-    
-    
-    func getQuestion(index: Int) {
+    private func getQuestion(index: Int) {
         
         questionLbl.text = allQuestions.questions[index].question
         questionLbl.numberOfLines = 0
@@ -113,8 +95,14 @@ class QuestionViewController: UIViewController {
         answersLbl[2].text = allQuestions.questions[index].answers[2]
         answersLbl[3].text = allQuestions.questions[index].answers[3]
     }
+
+    private func setButtonsBackToDefault() {
+        (answerOne.isHidden, answerTwo.isHidden, answerThree.isHidden, answerFour.isHidden) = (false, false, false, false)
+        (answerOneBtn.isEnabled, answerTwoBtn.isEnabled, answerThreeBtn.isEnabled, answerFourBtn.isEnabled) = (true, true, true, true)
+        answersBtn.forEach {$0.setBackgroundImage(UIImage(named: RectangleImages.blue.rawValue), for: .normal) }
+    }
     
-    func answerIsChecking(name: String) {
+    private func answerIsChecking(name: String) {
         if name == "AnswerAccepted" {
             let url = Bundle.main.url(forResource: name, withExtension: "mp3")
             player = try! AVAudioPlayer(contentsOf: url!)
@@ -148,11 +136,7 @@ class QuestionViewController: UIViewController {
         callFriendButton.alpha = 0.5
         
     }
-    
-    
-    
-    
-    
+
     @IBAction func fiftyFiftyButtonPressed(_ sender: UIButton) {
         getFiftyFifty()
         answerIsChecking(name: "FiftyFifty")
@@ -161,7 +145,6 @@ class QuestionViewController: UIViewController {
     }
     
     @objc func checkStopped() {
-        
         player.stop()
         
         if isCorrect == true {
@@ -170,10 +153,8 @@ class QuestionViewController: UIViewController {
         } else {
             answersBtn[answerTag! - 1].setBackgroundImage(UIImage(named: RectangleImages.red.rawValue), for: .normal)
             answerIsChecking(name: "WrongAnswer")
-            answersBtn[allQuestions.questions[currentQuestion].rightAnswer].setBackgroundImage(UIImage(named: RectangleImages.green.rawValue), for: .normal)
+            answersBtn[allQuestions.getRightAnswerIndex(questionNumber: currentQuestion)].setBackgroundImage(UIImage(named: RectangleImages.green.rawValue), for: .normal)
         }
-        answersBtn[answerTag! - 1].isEnabled = true
-        answersBtn[allQuestions.questions[currentQuestion].rightAnswer - 1].isEnabled = true
     }
 }
 

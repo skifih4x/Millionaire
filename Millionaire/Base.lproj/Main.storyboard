@@ -3,7 +3,6 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -227,13 +226,9 @@
                                             <constraint firstAttribute="width" constant="322" id="Mub-Xi-bfl"/>
                                             <constraint firstAttribute="height" constant="54" id="PHu-Uc-Ptz"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="tinted" title="D">
-                                            <backgroundConfiguration key="background" cornerRadius="20" image="buttonAnswerBackground">
-                                                <color key="backgroundColor" name="AccentColor"/>
-                                            </backgroundConfiguration>
-                                            <fontDescription key="titleFontDescription" name=".SFNS-Regular" family=".AppleSystemUIFont" pointSize="24"/>
-                                        </buttonConfiguration>
+                                        <fontDescription key="fontDescription" name=".SFNS-Regular" family=".AppleSystemUIFont" pointSize="24"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="D" backgroundImage="buttonAnswerBackground"/>
                                         <connections>
                                             <action selector="answerBtnPresesd:" destination="q3L-9z-nKa" eventType="touchUpInside" id="UbJ-YK-QUZ"/>
                                         </connections>
@@ -244,13 +239,9 @@
                                             <constraint firstAttribute="height" constant="54" id="2NZ-2z-w6f"/>
                                             <constraint firstAttribute="width" constant="322" id="71J-4h-upf"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="tinted" title="C">
-                                            <backgroundConfiguration key="background" cornerRadius="20" image="buttonAnswerBackground">
-                                                <color key="backgroundColor" name="AccentColor"/>
-                                            </backgroundConfiguration>
-                                            <fontDescription key="titleFontDescription" name=".SFNS-Regular" family=".AppleSystemUIFont" pointSize="24"/>
-                                        </buttonConfiguration>
+                                        <fontDescription key="fontDescription" name=".SFNS-Regular" family=".AppleSystemUIFont" pointSize="24"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="C" backgroundImage="buttonAnswerBackground"/>
                                         <connections>
                                             <action selector="answerBtnPresesd:" destination="q3L-9z-nKa" eventType="touchUpInside" id="Z7S-Ra-yuW"/>
                                         </connections>
@@ -261,13 +252,9 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="321" id="Ubd-De-68j"/>
                                             <constraint firstAttribute="height" constant="54" id="eaW-St-EHD"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="tinted" title="B">
-                                            <backgroundConfiguration key="background" cornerRadius="20" image="buttonAnswerBackground">
-                                                <color key="backgroundColor" name="AccentColor"/>
-                                            </backgroundConfiguration>
-                                            <fontDescription key="titleFontDescription" name=".SFNS-Regular" family=".AppleSystemUIFont" pointSize="24"/>
-                                        </buttonConfiguration>
+                                        <fontDescription key="fontDescription" name=".SFNS-Regular" family=".AppleSystemUIFont" pointSize="24"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="B" backgroundImage="buttonAnswerBackground"/>
                                         <connections>
                                             <action selector="answerBtnPresesd:" destination="q3L-9z-nKa" eventType="touchUpInside" id="KeT-xF-xvO"/>
                                         </connections>
@@ -278,13 +265,9 @@
                                             <constraint firstAttribute="height" constant="54" id="ilH-4a-cAX"/>
                                             <constraint firstAttribute="width" constant="322" id="k0j-ag-8qB"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="tinted" title="A">
-                                            <backgroundConfiguration key="background" cornerRadius="20" image="buttonAnswerBackground">
-                                                <color key="backgroundColor" name="AccentColor"/>
-                                            </backgroundConfiguration>
-                                            <fontDescription key="titleFontDescription" name=".SFNS-Regular" family=".AppleSystemUIFont" pointSize="24"/>
-                                        </buttonConfiguration>
+                                        <fontDescription key="fontDescription" name=".SFNS-Regular" family=".AppleSystemUIFont" pointSize="24"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="A" backgroundImage="RectangleBlue"/>
                                         <connections>
                                             <action selector="answerBtnPresesd:" destination="q3L-9z-nKa" eventType="touchUpInside" id="yHo-Yl-Dwj"/>
                                         </connections>
@@ -420,6 +403,10 @@
                         <outletCollection property="answersLbl" destination="LRI-aA-aQG" collectionClass="NSMutableArray" id="d1U-DT-7VY"/>
                         <outletCollection property="answersLbl" destination="R91-Sn-kdu" collectionClass="NSMutableArray" id="ekN-EZ-GDe"/>
                         <outletCollection property="answersLbl" destination="nl2-Pc-3yV" collectionClass="NSMutableArray" id="ZGd-t0-VfS"/>
+                        <outletCollection property="answersBtn" destination="4Zk-Df-SfJ" collectionClass="NSMutableArray" id="JHR-ak-m6d"/>
+                        <outletCollection property="answersBtn" destination="7Fv-8H-eNa" collectionClass="NSMutableArray" id="M7s-Lu-NEb"/>
+                        <outletCollection property="answersBtn" destination="Rx6-va-p2D" collectionClass="NSMutableArray" id="h40-TX-ba8"/>
+                        <outletCollection property="answersBtn" destination="TZ6-tB-IF8" collectionClass="NSMutableArray" id="h2n-fh-bD9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WyM-UM-bRm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -686,11 +673,9 @@
         <image name="Group 30" width="105" height="81"/>
         <image name="Group 31fifty" width="105" height="81"/>
         <image name="Logo" width="225" height="225"/>
+        <image name="RectangleBlue" width="320" height="39"/>
         <image name="background" width="414" height="736"/>
         <image name="buttonAnswerBackground" width="320" height="39"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

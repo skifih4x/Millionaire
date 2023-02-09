@@ -12,23 +12,22 @@ class QuestionViewController: UIViewController {
     
     var player: AVAudioPlayer!
     var audioPlayerTimer = Timer()
+    var bgChangedTimer = Timer()
 
     let allQuestions = AllQuestions()
     var currentQuestion = 0
     var isCorrect: Bool?
+    var correctAnswer: Int?
+    
     
     @IBOutlet weak var questionLbl: UILabel!
-    
-    @IBOutlet weak var answerOne: UILabel!
-    @IBOutlet weak var answerTwo: UILabel!
-    @IBOutlet weak var answerThree: UILabel!
-    @IBOutlet weak var answerFour: UILabel!
-    
-  
+    @IBOutlet var answersLbl: [UILabel]!
     
     @IBAction func answerBtnPresesd(_ sender: UIButton) {
         if sender.tag == allQuestions.questions[currentQuestion].rightAnswer {
             isCorrect = true
+            correctAnswer = sender.tag
+            bgChangedTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.stopSound), userInfo: nil, repeats: false)
         } else {
             isCorrect = false
         }
@@ -59,10 +58,10 @@ class QuestionViewController: UIViewController {
         questionLbl.text = allQuestions.questions[index].question
         questionLbl.numberOfLines = 0
         
-        answerOne.text = allQuestions.questions[index].answers[0]
-        answerTwo.text = allQuestions.questions[index].answers[1]
-        answerThree.text = allQuestions.questions[index].answers[2]
-        answerFour.text = allQuestions.questions[index].answers[3]
+        answersLbl[0].text = allQuestions.questions[index].answers[0]
+        answersLbl[1].text = allQuestions.questions[index].answers[1]
+        answersLbl[2].text = allQuestions.questions[index].answers[2]
+        answersLbl[3].text = allQuestions.questions[index].answers[3]
     }
     
     func playSound(name: String) {
@@ -82,6 +81,7 @@ class QuestionViewController: UIViewController {
         player.stop()
         if isCorrect == true {
             playSound(name: "CorrectAnswer")
+
         } else {
             playSound(name: "WrongAnswer")
         }

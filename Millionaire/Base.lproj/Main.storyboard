@@ -415,11 +415,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="wHv-03-U1y"/>
                     <connections>
-                        <outlet property="answerFour" destination="nl2-Pc-3yV" id="vXQ-0d-f8s"/>
-                        <outlet property="answerOne" destination="Roh-mp-Ugw" id="kyG-m8-t8r"/>
-                        <outlet property="answerThree" destination="R91-Sn-kdu" id="Gaa-lc-wv6"/>
-                        <outlet property="answerTwo" destination="LRI-aA-aQG" id="63q-We-tL8"/>
                         <outlet property="questionLbl" destination="GeE-g6-gZk" id="Vd2-FJ-a3e"/>
+                        <outletCollection property="answersLbl" destination="Roh-mp-Ugw" collectionClass="NSMutableArray" id="0Mw-BK-M7O"/>
+                        <outletCollection property="answersLbl" destination="LRI-aA-aQG" collectionClass="NSMutableArray" id="d1U-DT-7VY"/>
+                        <outletCollection property="answersLbl" destination="R91-Sn-kdu" collectionClass="NSMutableArray" id="ekN-EZ-GDe"/>
+                        <outletCollection property="answersLbl" destination="nl2-Pc-3yV" collectionClass="NSMutableArray" id="ZGd-t0-VfS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WyM-UM-bRm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -678,6 +678,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="foe-gj-VlJ"/>
         <segue reference="Mwz-fg-iWq"/>
     </inferredMetricsTieBreakers>
     <resources>

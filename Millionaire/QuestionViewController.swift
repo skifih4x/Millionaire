@@ -24,6 +24,10 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var answerThree: UILabel!
     @IBOutlet weak var answerFour: UILabel!
 
+    @IBOutlet weak var answerOneBtn: UIButton!
+    @IBOutlet weak var answerTwoBtn: UIButton!
+    @IBOutlet weak var answerThreeBtn: UIButton!
+    @IBOutlet weak var answerFourBtn: UIButton!
     @IBOutlet weak var fiftyFiftyButton: UIButton!
  
     
@@ -62,6 +66,8 @@ class QuestionViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getQuestion(index: currentQuestion)
+        (answerOne.isHidden, answerTwo.isHidden, answerThree.isHidden, answerFour.isHidden) = (false, false, false, false)
+        (answerOneBtn.isEnabled, answerTwoBtn.isEnabled, answerThreeBtn.isEnabled, answerFourBtn.isEnabled) = (true, true, true, true)
     }
     
     func getQuestion(index: Int) {

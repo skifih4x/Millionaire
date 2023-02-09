@@ -54,6 +54,8 @@ class QuestionViewController: UIViewController {
         } else {
             isCorrect = false
         }
+
+        currentQuestion += 1
         
 //
         
@@ -64,9 +66,7 @@ class QuestionViewController: UIViewController {
         answerTag = sender.tag
         answerIsChecking(name: "AnswerAccepted")
         
-        for answer in answersBtn {
-            answer.isEnabled = false
-        }
+        answersBtn.forEach {$0.isEnabled = false}
     }
     
     private func presentScore(bool: Bool) {
@@ -92,7 +92,8 @@ class QuestionViewController: UIViewController {
         getQuestion(index: currentQuestion)
         (answerOne.isHidden, answerTwo.isHidden, answerThree.isHidden, answerFour.isHidden) = (false, false, false, false)
         (answerOneBtn.isEnabled, answerTwoBtn.isEnabled, answerThreeBtn.isEnabled, answerFourBtn.isEnabled) = (true, true, true, true)
-        
+        answersBtn.forEach {$0.setBackgroundImage(UIImage(named: RectangleImages.blue.rawValue), for: .normal) }
+
         getQuestion(index: currentQuestion)
         answerIsChecking(name: "TimerSound")
         numbOfQuestion.text = String(currentQuestion)
@@ -164,12 +165,12 @@ class QuestionViewController: UIViewController {
         player.stop()
         
         if isCorrect == true {
-            answersBtn[answerTag! - 1].setBackgroundImage(UIImage(named: "RectangleGreen"), for: .normal)
+            answersBtn[answerTag! - 1].setBackgroundImage(UIImage(named: RectangleImages.green.rawValue), for: .normal)
             answerIsChecking(name: "CorrectAnswer")
         } else {
-            answersBtn[answerTag! - 1].setBackgroundImage(UIImage(named: "RectangleRed"), for: .normal)
+            answersBtn[answerTag! - 1].setBackgroundImage(UIImage(named: RectangleImages.red.rawValue), for: .normal)
             answerIsChecking(name: "WrongAnswer")
-            answersBtn[allQuestions.questions[currentQuestion].rightAnswer - 1].setBackgroundImage(UIImage(named: "RectangleGreen"), for: .normal)
+            answersBtn[allQuestions.questions[currentQuestion].rightAnswer].setBackgroundImage(UIImage(named: RectangleImages.green.rawValue), for: .normal)
         }
         answersBtn[answerTag! - 1].isEnabled = true
         answersBtn[allQuestions.questions[currentQuestion].rightAnswer - 1].isEnabled = true

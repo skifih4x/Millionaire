@@ -10,7 +10,8 @@ import UIKit
 class StartViewController: UIViewController {
 
     override func viewDidLoad() {
-        super.viewDidLoad() 
+        super.viewDidLoad()
+        navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view.
     }
 

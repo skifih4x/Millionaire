@@ -71,6 +71,7 @@ class QuestionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         answerIsChecking(name: "TimerSound")
+        navigationItem.hidesBackButton = true
     }
 
 
@@ -80,8 +81,8 @@ class QuestionViewController: UIViewController {
         setButtonsBackToDefault()
 
         answerIsChecking(name: "TimerSound")
-        numbOfQuestion.text = String(currentQuestion + 1)
-        cash.text = String(allQuestions.questions[currentQuestion].cash)
+        numbOfQuestion.text = ("Вопрос ") + String(currentQuestion + 1)
+        cash.text = ("Сумма  ") + String(allQuestions.questions[currentQuestion].cash)
     }
     
     

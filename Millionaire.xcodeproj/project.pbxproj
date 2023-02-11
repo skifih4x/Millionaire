@@ -42,7 +42,6 @@
 		0059CEF3298FBC82004D2534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0059CEF5298FBC82004D2534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		008F16FF2993E20600466BC0 /* ScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
-		8464E5CF298FF1AD003021C9 /* Millionaire-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Millionaire-Bridging-Header.h"; sourceTree = "<group>"; };
 		8464E5D6298FF256003021C9 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		8464E5D829903BB5003021C9 /* LoseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoseViewController.swift; sourceTree = "<group>"; };
 		8464E5DA29904219003021C9 /* LevelPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelPlayerViewController.swift; sourceTree = "<group>"; };
@@ -89,24 +88,55 @@
 			children = (
 				0059CEE7298FBC81004D2534 /* AppDelegate.swift */,
 				0059CEE9298FBC81004D2534 /* SceneDelegate.swift */,
+				AB85DD9A2997EAFB005083C6 /* Controller */,
+				AB85DD9B2997EB04005083C6 /* View */,
+				AB85DD9C2997EB0E005083C6 /* Model */,
+				AB85DD9D2997EB3E005083C6 /* Supporing files */,
+				0059CEF5298FBC82004D2534 /* Info.plist */,
+				AB6DF3C42993E75C00C69E4A /* Constants.swift */,
+			);
+			path = Millionaire;
+			sourceTree = "<group>";
+		};
+		AB85DD9A2997EAFB005083C6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				008F16FF2993E20600466BC0 /* ScoreViewController.swift */,
 				0059CEEB298FBC81004D2534 /* StartViewController.swift */,
 				8464E5D6298FF256003021C9 /* QuestionViewController.swift */,
 				8464E5D829903BB5003021C9 /* LoseViewController.swift */,
 				8464E5DA29904219003021C9 /* LevelPlayerViewController.swift */,
 				8464E5DC2992FFA6003021C9 /* RulesGameViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AB85DD9B2997EB04005083C6 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				0059CEED298FBC81004D2534 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AB85DD9C2997EB0E005083C6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				003C0F6B299144CB002EFC41 /* QuestionsBuilder.swift */,
 				003C0F69299144C6002EFC41 /* Questions.swift */,
-				0059CEF0298FBC82004D2534 /* Assets.xcassets */,
-				0059CEF2298FBC82004D2534 /* LaunchScreen.storyboard */,
-				0059CEF5298FBC82004D2534 /* Info.plist */,
-				E549E33F298FF06F002F16EB /* Sounds */,
-				8464E5CF298FF1AD003021C9 /* Millionaire-Bridging-Header.h */,
-				008F16FF2993E20600466BC0 /* ScoreViewController.swift */,
-				AB6DF3C42993E75C00C69E4A /* Constants.swift */,
 				E5EBBD0F299414DE00F509CC /* Hints.swift */,
 			);
-			path = Millionaire;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AB85DD9D2997EB3E005083C6 /* Supporing files */ = {
+			isa = PBXGroup;
+			children = (
+				E549E33F298FF06F002F16EB /* Sounds */,
+				0059CEF0298FBC82004D2534 /* Assets.xcassets */,
+				0059CEF2298FBC82004D2534 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporing files";
 			sourceTree = "<group>";
 		};
 		E549E33F298FF06F002F16EB /* Sounds */ = {
@@ -376,7 +406,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.artemorlov.Millionaire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Millionaire/Millionaire-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -407,7 +436,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.artemorlov.Millionaire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Millionaire/Millionaire-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

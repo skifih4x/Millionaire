@@ -16,16 +16,12 @@ class LoseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
-//        setupUI()
+        setupUI()
     }
 
-//    private func setupUI() {
-//        guard let moneyWonCount else { return }
-//        looseDescriptionLabel.text = "Ваш выигрыш составил \(moneyWonCount) рублей"
-//
-//    }
-    
+    private func setupUI() {
+        guard let moneyWonCount else { return }
+        looseDescriptionLabel.text = "Ваш выигрыш составил \(moneyWonCount) рублей"
 
-
-
+    }
 }

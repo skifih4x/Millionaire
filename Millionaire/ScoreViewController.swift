@@ -73,10 +73,10 @@ class ScoreViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    convenience init(currentQuestion: Int, correct: Bool) {
+    convenience init(currentQuestion: Int, isCorrect: Bool) {
         self.init(nibName: nil, bundle: nil)
         self.currentQuestion = currentQuestion
-        self.isCorrect = correct
+        self.isCorrect = isCorrect
     }
 
     override func viewDidAppear(_ animated: Bool) {

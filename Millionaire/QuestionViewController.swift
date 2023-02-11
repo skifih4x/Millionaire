@@ -11,6 +11,8 @@ import AVFoundation
 class QuestionViewController: UIViewController {
     
     var player: AVAudioPlayer!
+    var fiftyFiftyPlayer: AVAudioPlayer!
+
     var audioPlayerTimer = Timer()
     
     let allQuestions = AllQuestions()
@@ -19,7 +21,7 @@ class QuestionViewController: UIViewController {
     var answerTag: Int?
     
     var timer: Timer?
-    var timeLeft = 10
+    var timeLeft = 30
     
     
     @IBOutlet weak var timerLabel: UILabel!
@@ -50,7 +52,7 @@ class QuestionViewController: UIViewController {
     @IBAction func answerBtnPresesd(_ sender: UIButton) {
         
         if sender.tag == allQuestions.questions[currentQuestion].rightAnswer {
-    
+
             isCorrect = true
         } else {
             isCorrect = false
@@ -61,13 +63,14 @@ class QuestionViewController: UIViewController {
         answerIsChecking(name: "AnswerAccepted")
         answerTag = sender.tag
         answerIsChecking(name: "AnswerAccepted")
+        stopTimer()
         
         answersBtn.forEach {$0.isEnabled = false}
     }
     
     private func presentScore(bool: Bool) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {
-            let scoreVC = ScoreViewController(currentQuestion: self.currentQuestion, correct: bool)
+            let scoreVC = ScoreViewController(currentQuestion: self.currentQuestion, isCorrect: bool)
             self.navigationController?.pushViewController(scoreVC, animated: false)
         }
     }
@@ -76,8 +79,6 @@ class QuestionViewController: UIViewController {
         super.viewDidLoad()
         answerIsChecking(name: "TimerSound")
         navigationItem.hidesBackButton = true
-        startTimer ()
-       
     }
 
 
@@ -85,6 +86,7 @@ class QuestionViewController: UIViewController {
         super.viewWillAppear(animated)
         getQuestion(index: currentQuestion)
         setButtonsBackToDefault()
+        startTimer()
         
 
         answerIsChecking(name: "TimerSound")
@@ -110,7 +112,9 @@ class QuestionViewController: UIViewController {
         (answerOneBtn.isEnabled, answerTwoBtn.isEnabled, answerThreeBtn.isEnabled, answerFourBtn.isEnabled) = (true, true, true, true)
         answersBtn.forEach {$0.setBackgroundImage(UIImage(named: RectangleImages.blue.rawValue), for: .normal) }
     }
-    
+
+
+
     private func answerIsChecking(name: String) {
         if name == "AnswerAccepted" {
             let url = Bundle.main.url(forResource: name, withExtension: "mp3")
@@ -121,7 +125,11 @@ class QuestionViewController: UIViewController {
             } else {
                 audioPlayerTimer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.checkStopped), userInfo: nil, repeats: false)
             }
-            
+        } else if name == "FiftyFifty" {
+            let url = Bundle.main.url(forResource: name, withExtension: "mp3")
+
+            fiftyFiftyPlayer = try! AVAudioPlayer(contentsOf: url!)
+            fiftyFiftyPlayer.play()
         } else {
             let url = Bundle.main.url(forResource: name, withExtension: "mp3")
             player = try! AVAudioPlayer(contentsOf: url!)
@@ -156,7 +164,7 @@ class QuestionViewController: UIViewController {
     @objc func checkStopped() {
         player.stop()
         timer?.invalidate()
-        
+
         if isCorrect == true {
             answersBtn[answerTag! - 1].setBackgroundImage(UIImage(named: RectangleImages.green.rawValue), for: .normal)
             answerIsChecking(name: "CorrectAnswer")
@@ -167,27 +175,34 @@ class QuestionViewController: UIViewController {
         }
     }
     private  func startTimer () {
-          timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(onTimer), userInfo: nil, repeats: true)
-      }
-    
+        timeLeft = 30
+        timerLabel.text = "\(timeLeft)"
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(onTimer), userInfo: nil, repeats: true)
+    }
+
     @objc  func onTimer () {
         timeLeft -= 1
         timerLabel.text = "\(timeLeft)"
-         
-            if timeLeft <= 0 {
-                timer?.invalidate()
-                timer = nil
-            }
-      }
-    private func endTimer() {
-        
+
+        if timeLeft <= 0 {
+            stopTimer()
+            timeIsOver(isCorrect: false)
+        }
     }
-    
-    private func timeIsOver(bool: Bool) {
+
+    private func stopTimer() {
+        timer?.invalidate()
+        timer = nil
+    }
+
+    private func endTimer() {
+
+    }
+
+    private func timeIsOver(isCorrect: Bool) {
         DispatchQueue.main.asyncAfter(deadline: .now()) {
-            let scoreVC = ScoreViewController(currentQuestion: self.currentQuestion, correct: bool)
+            let scoreVC = ScoreViewController(currentQuestion: self.currentQuestion, isCorrect: isCorrect)
             self.navigationController?.pushViewController(scoreVC, animated: false)
-            
         }
     }
     

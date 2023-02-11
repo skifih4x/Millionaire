@@ -146,11 +146,11 @@ class ScoreViewController: UIViewController {
 
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let looseVC = storyboard.instantiateViewController(withIdentifier: "loseVC") as! LoseViewController
-            if let moneyCount {
-                looseVC.moneyWonCount = moneyCount
-            } else {
-                looseVC.moneyWonCount = self.moneyWon
-            }
+//            if let moneyCount {
+//                looseVC.moneyWonCount = moneyCount
+//            } else {
+//                looseVC.moneyWonCount = self.moneyWon
+//            }
 
             self.navigationController?.pushViewController(looseVC, animated: true)
         }

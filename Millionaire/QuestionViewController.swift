@@ -18,7 +18,11 @@ class QuestionViewController: UIViewController {
     var isCorrect: Bool?
     var answerTag: Int?
     
+    var timer: Timer?
+    var timeLeft = 10
     
+    
+    @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var cash: UILabel!
     @IBOutlet weak var numbOfQuestion: UILabel!
     @IBOutlet weak var questionLbl: UILabel!
@@ -72,6 +76,8 @@ class QuestionViewController: UIViewController {
         super.viewDidLoad()
         answerIsChecking(name: "TimerSound")
         navigationItem.hidesBackButton = true
+        startTimer ()
+       
     }
 
 
@@ -79,10 +85,12 @@ class QuestionViewController: UIViewController {
         super.viewWillAppear(animated)
         getQuestion(index: currentQuestion)
         setButtonsBackToDefault()
+        
 
         answerIsChecking(name: "TimerSound")
         numbOfQuestion.text = ("Вопрос ") + String(currentQuestion + 1)
         cash.text = ("Сумма  ") + String(allQuestions.questions[currentQuestion].cash)
+        
     }
     
     
@@ -147,6 +155,7 @@ class QuestionViewController: UIViewController {
     
     @objc func checkStopped() {
         player.stop()
+        timer?.invalidate()
         
         if isCorrect == true {
             answersBtn[answerTag! - 1].setBackgroundImage(UIImage(named: RectangleImages.green.rawValue), for: .normal)
@@ -157,5 +166,30 @@ class QuestionViewController: UIViewController {
             answersBtn[allQuestions.getRightAnswerIndex(questionNumber: currentQuestion)].setBackgroundImage(UIImage(named: RectangleImages.green.rawValue), for: .normal)
         }
     }
+    private  func startTimer () {
+          timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(onTimer), userInfo: nil, repeats: true)
+      }
+    
+    @objc  func onTimer () {
+        timeLeft -= 1
+        timerLabel.text = "\(timeLeft)"
+         
+            if timeLeft <= 0 {
+                timer?.invalidate()
+                timer = nil
+            }
+      }
+    private func endTimer() {
+        
+    }
+    
+    private func timeIsOver(bool: Bool) {
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            let scoreVC = ScoreViewController(currentQuestion: self.currentQuestion, correct: bool)
+            self.navigationController?.pushViewController(scoreVC, animated: false)
+            
+        }
+    }
+    
 }
 

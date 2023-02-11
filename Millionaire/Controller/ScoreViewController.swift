@@ -16,6 +16,13 @@ class ScoreViewController: UIViewController {
 
     private let allQuestions = AllQuestions()
 
+    lazy var logoImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "Logo")
+        return imageView
+    }()
+
     lazy var takeMoneyButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -114,6 +121,15 @@ class ScoreViewController: UIViewController {
                                                                        moneycount: allQuestions.getQuestionCash(questionNumber: num)))
         }
     }
+
+
+    private func showWinnerAnimation() {
+        for (index, view) in overallStackView.arrangedSubviews.enumerated() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2 * Double(index)) {
+                self.flashingAnimation(in: view)
+            }
+        }
+    }
     
     private func checkForLoose(currentQuestion: Int) {
         var currentQuestion = currentQuestion
@@ -134,6 +150,7 @@ class ScoreViewController: UIViewController {
         case 15: self.moneyWon = 1000_000
             presentDefaultAlert(title: "Вы победили!", text: "Хотите попробовать еще раз?",
                                 buttonText: "Попробовать еще раз")
+            showWinnerAnimation()
         default: break
 
         }
@@ -168,6 +185,7 @@ class ScoreViewController: UIViewController {
         view.addSubview(overallStackView)
         view.addSubview(continieTapView)
         view.addSubview(takeMoneyButton)
+        view.addSubview(logoImageView)
 
         NSLayoutConstraint.activate([
 
@@ -176,6 +194,10 @@ class ScoreViewController: UIViewController {
             takeMoneyButton.heightAnchor.constraint(equalToConstant: 40),
             takeMoneyButton.widthAnchor.constraint(equalToConstant: 150),
 
+            logoImageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            logoImageView.centerYAnchor.constraint(equalTo: takeMoneyButton.centerYAnchor),
+            logoImageView.heightAnchor.constraint(equalToConstant: 80),
+            logoImageView.widthAnchor.constraint(equalToConstant: 80),
 
             continieTapView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             continieTapView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -278,6 +300,10 @@ class ScoreViewController: UIViewController {
             }
         })
         
+    }
+    func delay(_ delay:Double, closure:@escaping ()->()) {
+        DispatchQueue.main.asyncAfter(
+            deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
     }
 }
 

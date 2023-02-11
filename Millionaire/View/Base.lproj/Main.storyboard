@@ -578,6 +578,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="oh4-B9-pNJ"/>
                     <connections>
+                        <outlet property="gameResultLabel" destination="ZsK-Uj-QAR" id="29x-nJ-8hj"/>
                         <outlet property="looseDescriptionLabel" destination="eAw-C9-ULL" id="VhR-Cu-2t7"/>
                     </connections>
                 </viewController>

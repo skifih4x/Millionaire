@@ -73,10 +73,10 @@ class ScoreViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    convenience init(currentQuestion: Int, correct: Bool) {
+    convenience init(currentQuestion: Int, isCorrect: Bool) {
         self.init(nibName: nil, bundle: nil)
         self.currentQuestion = currentQuestion
-        self.isCorrect = correct
+        self.isCorrect = isCorrect
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -146,11 +146,11 @@ class ScoreViewController: UIViewController {
 
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let looseVC = storyboard.instantiateViewController(withIdentifier: "loseVC") as! LoseViewController
-            if let moneyCount {
-                looseVC.moneyWonCount = moneyCount
-            } else {
-                looseVC.moneyWonCount = self.moneyWon
-            }
+//            if let moneyCount {
+//                looseVC.moneyWonCount = moneyCount
+//            } else {
+//                looseVC.moneyWonCount = self.moneyWon
+//            }
 
             self.navigationController?.pushViewController(looseVC, animated: true)
         }

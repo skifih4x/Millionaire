@@ -72,6 +72,7 @@ class QuestionViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {
             let scoreVC = ScoreViewController(currentQuestion: self.currentQuestion, isCorrect: bool)
             self.navigationController?.pushViewController(scoreVC, animated: false)
+            self.stopTimer()
         }
     }
     
@@ -112,9 +113,6 @@ class QuestionViewController: UIViewController {
         (answerOneBtn.isEnabled, answerTwoBtn.isEnabled, answerThreeBtn.isEnabled, answerFourBtn.isEnabled) = (true, true, true, true)
         answersBtn.forEach {$0.setBackgroundImage(UIImage(named: RectangleImages.blue.rawValue), for: .normal) }
     }
-
-
-
     private func answerIsChecking(name: String) {
         if name == "AnswerAccepted" {
             let url = Bundle.main.url(forResource: name, withExtension: "mp3")
@@ -161,7 +159,7 @@ class QuestionViewController: UIViewController {
         fiftyFiftyButton.isEnabled = false
     }
     
-    @objc func checkStopped() {
+    @objc private func checkStopped() {
         player.stop()
         timer?.invalidate()
 
@@ -180,7 +178,7 @@ class QuestionViewController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(onTimer), userInfo: nil, repeats: true)
     }
 
-    @objc  func onTimer () {
+    @objc private func onTimer () {
         timeLeft -= 1
         timerLabel.text = "\(timeLeft)"
 
@@ -194,11 +192,6 @@ class QuestionViewController: UIViewController {
         timer?.invalidate()
         timer = nil
     }
-
-    private func endTimer() {
-
-    }
-
     private func timeIsOver(isCorrect: Bool) {
         DispatchQueue.main.asyncAfter(deadline: .now()) {
             let scoreVC = ScoreViewController(currentQuestion: self.currentQuestion, isCorrect: isCorrect)

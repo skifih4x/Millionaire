@@ -145,11 +145,11 @@ class ScoreViewController: UIViewController {
             self.moneyWon = 0
         case 6...10:
             self.moneyWon = 1000
-        case 10...14:
+        case 11...15:
             self.moneyWon = 32000
-        case 15: self.moneyWon = 1000_000
+        case 16: self.moneyWon = 1000_000
             presentDefaultAlert(title: "Вы победили!", text: "Хотите попробовать еще раз?",
-                                buttonText: "Попробовать еще раз")
+            buttonText: "Попробовать еще раз")
             showWinnerAnimation()
         default: break
 

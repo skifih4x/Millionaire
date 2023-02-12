@@ -67,7 +67,7 @@ extension QuestionViewController {
         }
         
         
-    //Подсказка помощь зала, где зал с вероятность 70% отдаст большинство голосов за правильный ответ
+    //C вероятностью 70% каждый из 100 процентов будет отдан за верный ответ
         func correctAnswers() -> [Int] {
             var numberOfRightAnswer = allQuestions.questions[currentQuestion].rightAnswer
        

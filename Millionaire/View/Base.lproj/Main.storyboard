@@ -237,12 +237,6 @@
                                     <constraint firstAttribute="width" constant="87" id="fdX-Wd-ocI"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="questionLable" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="GeE-g6-gZk">
-                                <rect key="frame" x="147" y="67" width="223" height="20.333333333333329"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="systemBackgroundColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bdQ-xD-Pag">
                                 <rect key="frame" x="0.66666666666665719" y="264.33333333333331" width="389" height="449.99999999999994"/>
                                 <subviews>
@@ -402,7 +396,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SumWinner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OqP-AW-PAM">
-                                <rect key="frame" x="294.33333333333331" y="201.66666666666666" width="87.666666666666686" height="45"/>
+                                <rect key="frame" x="261" y="201.66666666666666" width="87.666666666666686" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="avY-PP-Tfx"/>
                                 </constraints>
@@ -410,8 +404,8 @@
                                 <color key="textColor" systemColor="systemBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="numberQuestion" textAlignment="center" lineBreakMode="clip" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLW-er-RHP">
-                                <rect key="frame" x="46.333333333333336" y="214" width="127.33333333333331" height="20.333333333333343"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="numberQuestion" lineBreakMode="clip" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLW-er-RHP">
+                                <rect key="frame" x="15.999999999999993" y="214" width="127.33333333333331" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemBackgroundColor"/>
                                 <nil key="highlightedColor"/>
@@ -445,6 +439,12 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="questionLable" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="GeE-g6-gZk">
+                                <rect key="frame" x="125" y="67" width="223" height="25.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hGa-6E-A6a"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -457,15 +457,15 @@
                             <constraint firstItem="QLW-er-RHP" firstAttribute="top" secondItem="C1Y-db-Lz6" secondAttribute="bottom" constant="60" id="8iU-yN-giB"/>
                             <constraint firstItem="QLW-er-RHP" firstAttribute="centerY" secondItem="OqP-AW-PAM" secondAttribute="centerY" id="Bxg-06-rZe"/>
                             <constraint firstItem="bdQ-xD-Pag" firstAttribute="top" secondItem="QLW-er-RHP" secondAttribute="bottom" constant="30" id="Fxt-ns-IFs"/>
-                            <constraint firstItem="OqP-AW-PAM" firstAttribute="leading" secondItem="QLW-er-RHP" secondAttribute="trailing" constant="120.66666666666669" id="Gfe-U8-5gr"/>
+                            <constraint firstItem="OqP-AW-PAM" firstAttribute="leading" secondItem="QLW-er-RHP" secondAttribute="trailing" constant="117.66666666666669" id="Gfe-U8-5gr"/>
                             <constraint firstItem="GeE-g6-gZk" firstAttribute="top" secondItem="hGa-6E-A6a" secondAttribute="top" constant="20" id="J1A-lk-P9M"/>
                             <constraint firstItem="3Qr-6J-yoo" firstAttribute="leading" secondItem="hGa-6E-A6a" secondAttribute="leading" id="KVC-7F-aWR"/>
-                            <constraint firstItem="OqP-AW-PAM" firstAttribute="trailing" secondItem="hGa-6E-A6a" secondAttribute="trailing" constant="-8" id="Kpk-jO-AK9"/>
+                            <constraint firstItem="OqP-AW-PAM" firstAttribute="trailing" secondItem="hGa-6E-A6a" secondAttribute="trailing" constant="-41.333333333333314" id="Kpk-jO-AK9"/>
                             <constraint firstItem="3Qr-6J-yoo" firstAttribute="trailing" secondItem="hGa-6E-A6a" secondAttribute="trailing" id="NY7-Cm-FWN"/>
-                            <constraint firstItem="hGa-6E-A6a" firstAttribute="trailing" secondItem="GeE-g6-gZk" secondAttribute="trailing" constant="20" id="NnD-Fx-FHl"/>
+                            <constraint firstItem="hGa-6E-A6a" firstAttribute="trailing" secondItem="GeE-g6-gZk" secondAttribute="trailing" constant="42" id="NnD-Fx-FHl"/>
                             <constraint firstAttribute="bottom" secondItem="3Qr-6J-yoo" secondAttribute="bottom" constant="30" id="YcG-6V-JyL"/>
-                            <constraint firstItem="QLW-er-RHP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="C1Y-db-Lz6" secondAttribute="leading" id="dbL-7T-9bJ"/>
-                            <constraint firstItem="GeE-g6-gZk" firstAttribute="leading" secondItem="C1Y-db-Lz6" secondAttribute="trailing" constant="40" id="frK-bw-VcB"/>
+                            <constraint firstItem="QLW-er-RHP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="C1Y-db-Lz6" secondAttribute="leading" constant="-4" id="dbL-7T-9bJ"/>
+                            <constraint firstItem="GeE-g6-gZk" firstAttribute="leading" secondItem="C1Y-db-Lz6" secondAttribute="trailing" constant="18" id="frK-bw-VcB"/>
                             <constraint firstItem="bdQ-xD-Pag" firstAttribute="centerY" secondItem="mjs-OV-j23" secondAttribute="centerY" constant="48" id="vXV-lX-wfI"/>
                             <constraint firstItem="hGa-6E-A6a" firstAttribute="trailing" secondItem="3Qr-6J-yoo" secondAttribute="trailing" id="vwa-JJ-RES"/>
                             <constraint firstItem="C1Y-db-Lz6" firstAttribute="leading" secondItem="hGa-6E-A6a" secondAttribute="leading" constant="20" id="wny-Mf-aQR"/>

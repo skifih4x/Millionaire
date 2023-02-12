@@ -21,7 +21,7 @@ class LoseViewController: UIViewController {
     }
 
     private func setupUI() {
-        guard let moneyWonCount else { return }
+        guard let moneyWonCount = moneyWonCount else { return }
         if moneyWonCount >= 1000_000 {
             gameResultLabel.text = "Won!"
             gameResultLabel.textColor = .systemGreen

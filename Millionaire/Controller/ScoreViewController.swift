@@ -20,6 +20,7 @@ class ScoreViewController: UIViewController {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "Logo")
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
 
@@ -29,6 +30,7 @@ class ScoreViewController: UIViewController {
         button.setTitle("Забрать деньги", for: .normal)
         button.backgroundColor = #colorLiteral(red: 0.3017496034, green: 0.1880411259, blue: 0.5, alpha: 1)
         button.layer.cornerRadius = 16
+        button.isHidden = true
         button.addTarget(self, action: #selector(takeMoneyPressed), for: .touchUpInside)
         return button
     }()
@@ -195,6 +197,7 @@ class ScoreViewController: UIViewController {
             takeMoneyButton.widthAnchor.constraint(equalToConstant: 150),
 
             logoImageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            logoImageView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
             logoImageView.centerYAnchor.constraint(equalTo: takeMoneyButton.centerYAnchor),
             logoImageView.heightAnchor.constraint(equalToConstant: 80),
             logoImageView.widthAnchor.constraint(equalToConstant: 80),

@@ -48,6 +48,41 @@ class QuestionViewController: UIViewController {
     @IBOutlet var answersLbl: [UILabel]!
     @IBOutlet var answersBtn: [UIButton]!
     
+    @IBOutlet weak var takeCashLbl: UIButton!
+    
+    @IBAction func takeCurrentCash(_ sender: UIButton) {
+        
+        let alertController = UIAlertController(title: title, message: "Уверены, что хотите забрать деньги?", preferredStyle: .alert)
+
+        let action1 = UIAlertAction(title: "Да", style: .default) { action in
+            
+            let alertController = UIAlertController(title: self.title, message: "Ваш выигрыш: \(self.allQuestions.questions[self.currentQuestion].cash)", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "Ok", style: .default) { action in
+                self.dismiss(animated: true)
+            }
+            
+            self.player.stop()
+            self.timer?.invalidate()
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let looseVC = storyboard.instantiateViewController(withIdentifier: "loseVC") as! LoseViewController
+            self.navigationController?.pushViewController(looseVC, animated: true)
+            
+            alertController.addAction(action)
+            self.present(alertController, animated: true)
+            
+        }
+        let action2 = UIAlertAction(title: "Нет", style: .default) { action in
+            self.dismiss(animated: true)
+        }
+        
+
+        alertController.addAction(action1)
+        alertController.addAction(action2)
+
+        present(alertController, animated: true)
+    }
     
     @IBAction func answerBtnPresesd(_ sender: UIButton) {
         
@@ -101,6 +136,9 @@ class QuestionViewController: UIViewController {
         
         questionLbl.text = allQuestions.questions[index].question
         questionLbl.numberOfLines = 0
+        
+        takeCashLbl.setTitle("Забрать деньги", for: .normal)
+        takeCashLbl.layer.cornerRadius = 20
         
         answersLbl[0].text = allQuestions.questions[index].answers[0]
         answersLbl[1].text = allQuestions.questions[index].answers[1]

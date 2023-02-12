@@ -7,13 +7,21 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class StartViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func srartGamePressed(_ sender: UIButton) {
+    }
 
+    @IBAction func unwindSegue(_ sender: UIStoryboardSegue){
+
+        }
+
+    
 }
 

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Q1-9V-LWS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Q1-9V-LWS">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,14 +14,14 @@
             <objects>
                 <viewController id="Dko-Kt-pkT" customClass="RulesGameViewController" customModule="Millionaire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bvg-kZ-imN">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="g4Y-nx-WTT">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k09-Dk-wVF">
-                                <rect key="frame" x="20" y="94" width="350" height="601"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k09-Dk-wVF">
+                                <rect key="frame" x="20" y="47" width="350" height="645"/>
                                 <string key="text">Игра Кто хочет стать миллионером? - это конкурс викторина, в котором участники должны правильно ответить на ряд вопросов с несколькими вариантами ответов, чтобы перейти на следующий уровень. Всего 15 вопросов, каждый вопрос стоит определенной суммы денег, участники не имеют никаких временных ограничений для предоставления ответа. Участники также получают три вида подсказок, чтобы помочь себе, если они застряли на конкретном вопросе.
         
     Вопросы “Кто хочет стать миллионером?” структурированы в соответствии с пятью различными уровнями, причем уровень сложности постепенно увеличивается. Каждый уровень содержит три вопроса.
@@ -54,7 +55,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Phs-cz-7e4">
-                                <rect key="frame" x="100.66666666666667" y="725" width="188.66666666666663" height="35"/>
+                                <rect key="frame" x="100.66666666666667" y="722" width="188.66666666666663" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <attributedString key="attributedTitle">
@@ -77,7 +78,7 @@
                             <constraint firstItem="g4Y-nx-WTT" firstAttribute="trailing" secondItem="sgZ-fK-4F2" secondAttribute="trailing" id="1Ow-BT-8pd"/>
                             <constraint firstAttribute="bottom" secondItem="g4Y-nx-WTT" secondAttribute="bottom" id="KcZ-Jm-ogW"/>
                             <constraint firstItem="Phs-cz-7e4" firstAttribute="centerX" secondItem="Bvg-kZ-imN" secondAttribute="centerX" id="e5f-5w-zym"/>
-                            <constraint firstItem="k09-Dk-wVF" firstAttribute="top" secondItem="sgZ-fK-4F2" secondAttribute="top" constant="50" id="gbf-sI-n86"/>
+                            <constraint firstItem="k09-Dk-wVF" firstAttribute="top" secondItem="sgZ-fK-4F2" secondAttribute="top" id="gbf-sI-n86"/>
                             <constraint firstItem="g4Y-nx-WTT" firstAttribute="leading" secondItem="sgZ-fK-4F2" secondAttribute="leading" id="hTC-nH-fR9"/>
                             <constraint firstItem="g4Y-nx-WTT" firstAttribute="top" secondItem="Bvg-kZ-imN" secondAttribute="top" id="mlt-h2-5Mi"/>
                             <constraint firstItem="sgZ-fK-4F2" firstAttribute="trailing" secondItem="k09-Dk-wVF" secondAttribute="trailing" constant="20" id="txa-BF-hmQ"/>
@@ -90,21 +91,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BSb-5p-Uk4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="920" y="-572.2748815165877"/>
+            <point key="canvasLocation" x="1834" y="-579"/>
         </scene>
         <!--Start View Controller-->
         <scene sceneID="e8n-Cj-gh1">
             <objects>
                 <viewController storyboardIdentifier="startVC" id="eZN-4r-Whj" customClass="StartViewController" customModule="Millionaire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OMx-sL-ANK">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="kTZ-2R-Mpf">
-                                <rect key="frame" x="-4" y="0.0" width="398" height="824"/>
+                                <rect key="frame" x="-4" y="0.0" width="398" height="821"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2E5-Cc-ge0">
-                                <rect key="frame" x="45" y="590" width="300" height="60"/>
+                                <rect key="frame" x="45" y="587" width="300" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="S0N-xz-lcw"/>
                                     <constraint firstAttribute="height" constant="60" id="z0H-Tl-sds"/>
@@ -132,7 +133,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="wcX-If-1Ob">
-                                <rect key="frame" x="82.666666666666686" y="49" width="225" height="225"/>
+                                <rect key="frame" x="82.666666666666686" y="52" width="225" height="225"/>
                                 <color key="tintColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="225" id="Zly-Yj-M6H"/>
@@ -140,13 +141,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eM6-Qk-IrH">
-                                <rect key="frame" x="144.33333333333334" y="310" width="101.66666666666666" height="25.333333333333314"/>
+                                <rect key="frame" x="144.33333333333334" y="313" width="101.66666666666666" height="25.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" systemColor="systemBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yc2-XH-Cuk">
-                                <rect key="frame" x="0.0" y="406.33333333333331" width="390" height="92"/>
+                                <rect key="frame" x="0.0" y="409.33333333333331" width="390" height="92"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="92" id="MMb-Xb-FcW"/>
                                 </constraints>
@@ -162,7 +163,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mOP-kz-Ua8">
-                                <rect key="frame" x="45" y="700" width="300" height="60"/>
+                                <rect key="frame" x="45" y="697" width="300" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="tVd-XC-E4E"/>
                                     <constraint firstAttribute="height" constant="60" id="ufN-81-QZR"/>
@@ -223,21 +224,21 @@
             <objects>
                 <viewController id="q3L-9z-nKa" customClass="QuestionViewController" customModule="Millionaire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jxP-Tb-I7Q">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="mjs-OV-j23">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="876.66666666666663"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="882.66666666666663"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" highlightedImage="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="C1Y-db-Lz6">
-                                <rect key="frame" x="20" y="64" width="87" height="87"/>
+                                <rect key="frame" x="20" y="67" width="87" height="87"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="87" id="8Wy-4G-G9I"/>
                                     <constraint firstAttribute="width" constant="87" id="fdX-Wd-ocI"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bdQ-xD-Pag">
-                                <rect key="frame" x="0.66666666666665719" y="261.33333333333331" width="389" height="449.99999999999994"/>
+                                <rect key="frame" x="0.66666666666665719" y="264.33333333333331" width="389" height="449.99999999999994"/>
                                 <subviews>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TZ6-tB-IF8">
                                         <rect key="frame" x="33.333333333333343" y="262.00000000000006" width="322" height="54"/>
@@ -371,9 +372,7 @@
                                         </constraints>
                                         <color key="tintColor" red="0.14556765560000001" green="0.26400780680000002" blue="0.41163498160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Button">
-                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
+                                        <buttonConfiguration key="configuration" style="filled"/>
                                         <connections>
                                             <action selector="takeCurrentCash:" destination="q3L-9z-nKa" eventType="touchUpInside" id="4MT-kI-FfL"/>
                                         </connections>
@@ -413,7 +412,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SumWinner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OqP-AW-PAM">
-                                <rect key="frame" x="261" y="198.66666666666666" width="87.666666666666686" height="45"/>
+                                <rect key="frame" x="261" y="201.66666666666666" width="87.666666666666686" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="avY-PP-Tfx"/>
                                 </constraints>
@@ -428,7 +427,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="3Qr-6J-yoo">
-                                <rect key="frame" x="0.0" y="661" width="390" height="99"/>
+                                <rect key="frame" x="0.0" y="658" width="390" height="99"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNQ-q6-iBx" userLabel="Fifty">
                                         <rect key="frame" x="0.0" y="2" width="121.33333333333333" height="95"/>
@@ -457,7 +456,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="questionLable" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="GeE-g6-gZk">
-                                <rect key="frame" x="125" y="64" width="223" height="25.333333333333329"/>
+                                <rect key="frame" x="125" y="67" width="223" height="25.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" systemColor="systemBackgroundColor"/>
                                 <nil key="highlightedColor"/>
@@ -534,10 +533,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="5ZJ-Wb-bIX">
-                                <rect key="frame" x="82.666666666666686" y="64" width="225" height="225"/>
+                                <rect key="frame" x="82.666666666666686" y="67" width="225" height="225"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOOSE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZsK-Uj-QAR">
-                                <rect key="frame" x="54" y="297" width="282" height="60"/>
+                                <rect key="frame" x="54" y="300" width="282" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="textColor" red="0.96470588235294119" green="0.38823529411764707" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -567,8 +566,8 @@
                                     <segue destination="3EG-Gl-wbQ" kind="unwind" unwindAction="unwindSegue:" id="kfD-ml-Jpu"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы выиграли count рублей" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAw-C9-ULL">
-                                <rect key="frame" x="35" y="406.33333333333331" width="320" height="31.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAw-C9-ULL">
+                                <rect key="frame" x="35" y="422" width="320" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -611,7 +610,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3Q1-9V-LWS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kOO-PW-pdY">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -636,7 +635,7 @@
         <image name="background" width="414" height="736"/>
         <image name="buttonAnswerBackground" width="320" height="39"/>
         <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
